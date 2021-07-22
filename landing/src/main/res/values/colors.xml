@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="landing_signup_with_socials_button_background">@color/athens_gray</color>
+    <color name="landing_signup_with_email_background">@color/sandy_brown</color>
+    <color name="landing_signup_with_email_text">@color/white</color>
+
+    <color name="landing_login_text_accent">@color/font_accent</color>
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text.Logo">
+        <item name="android:fontFamily">@font/press_start_2p_regular</item>
+        <item name="android:textSize">@dimen/text_32</item>
+        <item name="android:textColor">@color/toprest_primary</item>
+    </style>
+
+    <style name="LandingSubTitleTextStyle" parent="Text.32">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="LandingSignUpWithSocialsButtonTextStyle" parent="Text.16">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="LandingSignUpWithEmailButtonTextStyle" parent="LandingSignUpWithSocialsButtonTextStyle">
+        <item name="android:textColor">@color/landing_signup_with_email_text</item>
+    </style>
+
+    <style name="LandingLoginTextStyle" parent="Text.16">
+        <item name="android:textColor">@color/font_secondary</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+</resources>

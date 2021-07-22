@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+
+apply from: "$rootDir/buildSrc/src/CommonAndroid.gradle"
+apply plugin: 'kotlin-android'
+
+android {
+    defaultConfig {
+        applicationId = "com.toprest"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(":commonui")
+    implementation project(":core")
+    implementation project(":coreui")
+    implementation project(":landing")
+
+    implementation project(":navigation")
+
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}

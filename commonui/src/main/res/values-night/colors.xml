@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="font_primary">@color/white</color>
+    <color name="font_secondary">@color/ghost</color>
+
+    <color name="navigation_bar">@color/ebony_clay</color>
+    <color name="status_bar">@color/ebony_clay</color>
+
+    <color name="toprest_background">@color/ebony_clay</color>
+
+    <color name="plate_spinner_background">@color/ebony_clay_60</color>
+</resources>

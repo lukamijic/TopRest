@@ -1,0 +1,7 @@
+rootProject.name = "TopRest"
+include ':commonui'
+include ':core'
+include ':coreui'
+include ':landing'
+include ':navigation'
+include ':toprest'

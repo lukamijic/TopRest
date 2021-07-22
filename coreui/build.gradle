@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+
+apply from: "$rootDir/buildSrc/src/CommonAndroid.gradle"
+
+dependencies {
+    implementation project(":navigation")
+    implementation project(":core")
+
+    implementation AndroidX.recyclerView
+}

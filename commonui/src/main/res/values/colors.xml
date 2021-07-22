@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colors - USE ONLY WITHIN colors.xml -->
+    <color name="white">#FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="sandy_brown">#F2A365</color>
+    <color name="pickled_bluewood">#30475E</color>
+    <color name="ebony_clay">#222831</color>
+    <color name="ebony_clay_60">#99222831</color>
+    <color name="mirage">#17212d</color>
+    <color name="mine_shaft">#212121</color>
+    <color name="pale_sky">#6B747B</color>
+    <color name="athens_gray">#F4F5F7</color>
+    <color name="ghost">#C1C7D0</color>
+
+    <!-- Usable colors -->
+
+    <color name="toprest_primary">@color/sandy_brown</color>
+    <color name="toprest_blue">@color/pickled_bluewood</color>
+    <color name="toprest_blue_dark">@color/ebony_clay</color>
+
+    <color name="font_primary">@color/mine_shaft</color>
+    <color name="font_secondary">@color/pale_sky</color>
+    <color name="font_accent">@color/sandy_brown</color>
+
+    <color name="navigation_bar">@color/white</color>
+    <color name="status_bar">@color/white</color>
+
+    <color name="toprest_background">@color/white</color>
+
+    <color name="plate_spinner_background">@color/white_60</color>
+</resources>

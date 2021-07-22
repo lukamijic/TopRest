@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toprest_background"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/Text.Logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2"/>
+
+        <TextView
+            style="@style/LandingSubTitleTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/landing_subtitle"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <LinearLayout
+            android:id="@+id/continue_with_google"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/landing_button_height"
+            android:layout_marginHorizontal="@dimen/landing_button_margin_horizontal"
+            android:background="@drawable/landing_sign_up_with_social_button_background"
+            android:elevation="@dimen/elevation_8"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/landing_button_icon_margin_start"
+                android:layout_marginEnd="@dimen/landing_button_icon_margin_end"
+                android:src="@drawable/ic_google" />
+
+            <TextView
+                style="@style/LandingSignUpWithSocialsButtonTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/landing_sign_up_continue_with_google" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/continue_with_email"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/landing_button_height"
+            android:layout_marginHorizontal="@dimen/landing_button_margin_horizontal"
+            android:layout_marginTop="@dimen/landing_button_margin_top"
+            android:background="@drawable/landing_sign_up_with_email_button_background"
+            android:elevation="@dimen/elevation_8"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/continue_with_google">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/landing_button_icon_margin_start"
+                android:layout_marginEnd="@dimen/landing_button_icon_margin_end"
+                android:src="@drawable/ic_email" />
+
+            <TextView
+                style="@style/LandingSignUpWithEmailButtonTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/landing_sign_up_continue_with_email" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/log_in"
+            style="@style/LandingLoginTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/landing_login_margin_top"
+            android:padding="@dimen/landing_login_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/continue_with_email"
+            tools:text="Already have an account? Log In" />
+
+        <com.toprest.commonui.view.PlateSpinner
+            android:id="@+id/plate_spinner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:elevation="@dimen/elevation_16"
+            android:alpha="0"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:alpha="1"
+            tools:visibility="visible" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

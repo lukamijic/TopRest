@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/toprest_blue</item>
+        <item name="colorPrimaryDark">@color/toprest_blue_dark</item>
+        <item name="colorAccent">@color/toprest_primary</item>
+
+        <item name="android:windowLightStatusBar">@bool/isLightModeOn</item>
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@color/navigation_bar</item>
+        <item name="android:windowLightNavigationBar">@bool/isLightModeOn</item>
+    </style>
+</resources>

@@ -1,0 +1,66 @@
+apply plugin: 'kotlin-android'
+
+def versionMajor = 0
+def versionMinor = 1
+def versionPatch = 0
+
+android {
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode versionMajor * 10000 + versionMinor * 100 + versionPatch
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
+        archivesBaseName = "TopRest-$versionName"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+
+    buildTypes {
+        debug {
+            versionNameSuffix "-debug"
+
+            ext.enableCrashlytics = false
+            ext.alwaysUpdateBuildId = false
+
+            tasks.withType(Test) { enabled = false }
+
+            aaptOptions.cruncherEnabled = false // Disable png crunching
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    implementation AndroidX.appCompat
+
+    implementation Kotlin.stdLib
+    implementation Kotlin.coreKtx
+
+    implementation DI.coreKoin
+    implementation DI.androidKoin
+
+    implementation Log.timber
+
+    implementation RxJava.core
+    implementation RxJava.android
+}
