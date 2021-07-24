@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="formfieldlib_cursor_color">@color/mine_shaft</color>
+    <color name="formfieldlib_stroke">@color/mine_shaft</color>
+    <color name="formfieldlib_active_border">@color/mine_shaft</color>
+    <color name="formfieldlib_active_background">@color/white</color>
+    <color name="formfieldlib_error">@color/torch_red</color>
+    <color name="formfieldlib_error_background">@color/athens_gray</color>
+    <color name="formfieldlib_inactive_border">@color/ghost</color>
+    <color name="formfieldlib_inactive_background">@color/athens_gray</color>
+</resources>

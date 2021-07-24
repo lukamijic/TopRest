@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toprest_background">
+
+    <ImageView
+        android:id="@+id/back"
+        style="@style/IconButton"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.Logo.16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="@id/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/back" />
+
+    <TextView
+        android:id="@+id/sign_in_text"
+        style="@style/Text.32"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/login_sign_in_text_margin_horizontal"
+        android:layout_marginTop="@dimen/login_sign_in_text_margin_top"
+        android:text="@string/login_sign_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <com.coinme.formfieldlib.FormFieldView
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/login_input_field_margin_horizontal"
+        android:layout_marginTop="@dimen/login_email_margin_top"
+        android:elevation="@dimen/elevation_8"
+        android:hint="@string/login_email_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_in_text" />
+
+    <TextView
+        android:id="@+id/email_error_message"
+        style="@style/LoginErrorMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/login_error_margin_horizontal"
+        android:layout_marginTop="@dimen/login_error_margin_top"
+        android:text="@string/login_email_error"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        tools:visibility="visible" />
+
+    <com.coinme.formfieldlib.FormFieldView
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/login_input_field_margin_horizontal"
+        android:layout_marginTop="@dimen/login_password_margin_top"
+        android:elevation="@dimen/elevation_8"
+        android:hint="@string/login_password_hint"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toStartOf="@id/login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email" />
+
+    <ImageView
+        android:id="@+id/login"
+        android:layout_width="@dimen/login_button_size"
+        android:layout_height="@dimen/login_button_size"
+        android:layout_marginEnd="@dimen/login_button_margin_end"
+        android:background="@drawable/bg_accent_button_oval"
+        android:padding="@dimen/login_button_padding"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/password"
+        app:layout_constraintTop_toTopOf="@id/password" />
+
+    <TextView
+        android:id="@+id/password_error_message"
+        style="@style/LoginErrorMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/login_error_margin_horizontal"
+        android:layout_marginTop="@dimen/login_error_margin_top"
+        android:enabled="false"
+        android:text="@string/login_password_error"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/login_error_message"
+        style="@style/LoginErrorMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/login_error_margin_horizontal"
+        android:layout_marginTop="@dimen/login_error_login_failed_margin_top"
+        android:text="@string/login_login_failed_error"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_error_message"
+        tools:visibility="visible" />
+
+    <com.toprest.commonui.view.PlateSpinner
+        android:id="@+id/plate_spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/elevation_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

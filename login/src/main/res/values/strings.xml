@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login_sign_in">Sign In</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_email_error">Invalid Email Address</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_password_error">You password needs to have atleast 6 characters.</string>
+    <string name="login_login_failed_error">There was an error with signing in this account.</string>
+</resources>

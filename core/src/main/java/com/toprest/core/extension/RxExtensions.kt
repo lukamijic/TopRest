@@ -8,6 +8,7 @@ import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.functions.BiFunction
 import io.reactivex.rxjava3.internal.functions.Functions
 import timber.log.Timber
+import java.util.concurrent.Flow
 import java.util.concurrent.TimeUnit
 import kotlin.math.pow
 
@@ -122,3 +123,7 @@ fun <T> Flowable<T>.exponentialRetry(
             }
     }
 }
+
+fun <T> Single<T>.toCompletable(action: (T) -> Unit) = this.flatMapCompletable { Completable.fromAction { action(it) } }
+
+fun <T> Flowable<T>.toCompletable(action: (T) -> Unit) = this.flatMapCompletable { Completable.fromAction { action(it) } }

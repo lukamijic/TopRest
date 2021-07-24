@@ -14,8 +14,11 @@
             <option value="$PROJECT_DIR$/commonui" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/coreui" />
+            <option value="$PROJECT_DIR$/formfieldlib" />
             <option value="$PROJECT_DIR$/landing" />
+            <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/navigation" />
+            <option value="$PROJECT_DIR$/signup" />
             <option value="$PROJECT_DIR$/toprest" />
           </set>
         </option>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="signup_button_height">56dp</dimen>
+    <dimen name="signup_button_margin_bottom">36dp</dimen>
+    <dimen name="signup_button_margin_horizontal">24dp</dimen>
+    <dimen name="signup_button_padding">16dp</dimen>
+
+    <dimen name="signup_screen_title_margin_top">12dp</dimen>
+    <dimen name="signup_screen_title_margin_horizontal">48dp</dimen>
+    <dimen name="signup_screen_field_margin_horizontal">24dp</dimen>
+
+    <dimen name="registername_first_name_margin_top">32dp</dimen>
+    <dimen name="registername_last_name_margin_top">24dp</dimen>
+
+    <dimen name="accounttype_radio_group_margin_top">48dp</dimen>
+    <dimen name="accounttype_radio_button_padding">12dp</dimen>
+
+    <dimen name="registeremail_email_margin_top">32dp</dimen>
+    <dimen name="registeremail_email_error_margin_top">8dp</dimen>
+    <dimen name="registeremail_email_error_margin_horizontal">24dp</dimen>
+    <dimen name="registeremail_email_error_icon_padding">16dp</dimen>
+
+    <dimen name="registerpassword_password_margin_top">32dp</dimen>
+    <dimen name="registerpassword_password_error_margin_top">8dp</dimen>
+    <dimen name="registerpassword_repeat_password_margin_top">24dp</dimen>
+    <dimen name="registerpassword_repeat_password_error_margin_top">8dp</dimen>
+    <dimen name="registerpassword_repeat_password_error_margin_horizontal">24dp</dimen>
+    <dimen name="registerpassword_account_creation_error_margin_top">24dp</dimen>
+    <dimen name="registerpassword_account_creation_error_margin_horizontal">24dp</dimen>
+</resources>

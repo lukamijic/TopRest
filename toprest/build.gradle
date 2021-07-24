@@ -16,7 +16,8 @@ dependencies {
     implementation project(":core")
     implementation project(":coreui")
     implementation project(":landing")
-
+    implementation project(":login")
+    implementation project(":signup")
     implementation project(":navigation")
 
 

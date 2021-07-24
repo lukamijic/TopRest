@@ -2,6 +2,7 @@ package com.toprest.coreui.utils
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.TypedValue
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 
@@ -68,4 +69,14 @@ fun View.hideKeyboard() {
 
 fun View.onClick(action: () -> Unit) {
     setOnClickListener { action() }
+}
+
+fun View.addRipple() = with(TypedValue()) {
+    context.theme.resolveAttribute(android.R.attr.selectableItemBackground, this, true)
+    setBackgroundResource(resourceId)
+}
+
+fun View.addBorderlessRipple() = with(TypedValue()) {
+    context.theme.resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, this, true)
+    setBackgroundResource(resourceId)
 }

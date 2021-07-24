@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toprest_background">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/SignUpScreenTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/signup_screen_title_margin_horizontal"
+        android:layout_marginTop="@dimen/signup_screen_title_margin_top"
+        android:gravity="center_horizontal"
+        android:text="@string/accounttype_are_you"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/accounttype_radio_group_margin_top"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/customer_radio_button"
+            style="@style/AccountTypeRadioButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/accounttype_radio_button_color"
+            android:padding="@dimen/accounttype_radio_button_padding"
+            android:text="@string/accounttype_customer" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/owner_radio_button"
+            style="@style/AccountTypeRadioButtonText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:buttonTint="@color/accounttype_radio_button_color"
+            android:padding="@dimen/accounttype_radio_button_padding"
+            android:text="@string/accounttype_owner" />
+    </RadioGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

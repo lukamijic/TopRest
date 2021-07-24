@@ -21,7 +21,8 @@ class LandingFragment : BaseFragment<Unit, FragmentLandingBinding>(FragmentLandi
     override val model: LandingViewModel by viewModel()
 
     override fun FragmentLandingBinding.initialiseView(savedInstanceState: Bundle?) {
-        continueWithEmail.onClick { plateSpinner.fadeIn() }
+        continueWithEmail.onClick { model.goToSignUpFlow() }
+        logIn.onClick { model.goToLogin() }
         setupLogin()
     }
 
