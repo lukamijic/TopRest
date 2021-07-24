@@ -7,7 +7,7 @@ class SignUpTranslationsImpl(private val resources: Resources) : SignUpTranslati
 
     override fun nameTitle(): String = resources.getString(R.string.registername_title)
 
-    override fun accountTypeTitle(): String = resources.getString(R.string.accounttype_title)
+    override fun userType(): String = resources.getString(R.string.usertype_title)
 
     override fun emailTitle(): String = resources.getString(R.string.registeremail_title)
 

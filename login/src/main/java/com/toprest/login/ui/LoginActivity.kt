@@ -22,11 +22,12 @@ class LoginActivity : BaseActivity<LoginViewState, ActivityLoginBinding>(Activit
     override val model: LoginViewModel by viewModel()
 
     override fun ActivityLoginBinding.initialiseView(savedInstanceState: Bundle?) {
-        binding.login.enable(false)
-        binding.login.onClick { model.login() }
+        back.onClick { onBackPressed() }
+        login.enable(false)
+        login.onClick { model.login() }
 
-        binding.email.doAfterTextChanged { model.setEmail(it.toString()) }
-        binding.password.doAfterTextChanged { model.setPassword(it.toString()) }
+        email.doAfterTextChanged { model.setEmail(it.toString()) }
+        password.doAfterTextChanged { model.setPassword(it.toString()) }
     }
 
     override fun render(viewState: LoginViewState) = when(viewState) {

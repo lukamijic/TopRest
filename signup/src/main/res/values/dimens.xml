@@ -12,8 +12,8 @@
     <dimen name="registername_first_name_margin_top">32dp</dimen>
     <dimen name="registername_last_name_margin_top">24dp</dimen>
 
-    <dimen name="accounttype_radio_group_margin_top">48dp</dimen>
-    <dimen name="accounttype_radio_button_padding">12dp</dimen>
+    <dimen name="usertype_radio_group_margin_top">48dp</dimen>
+    <dimen name="usertype_radio_button_padding">12dp</dimen>
 
     <dimen name="registeremail_email_margin_top">32dp</dimen>
     <dimen name="registeremail_email_error_margin_top">8dp</dimen>

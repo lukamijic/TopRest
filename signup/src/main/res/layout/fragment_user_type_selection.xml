@@ -14,7 +14,7 @@
         android:layout_marginHorizontal="@dimen/signup_screen_title_margin_horizontal"
         android:layout_marginTop="@dimen/signup_screen_title_margin_top"
         android:gravity="center_horizontal"
-        android:text="@string/accounttype_are_you"
+        android:text="@string/usertype_are_you"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:id="@+id/radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/accounttype_radio_group_margin_top"
+        android:layout_marginTop="@dimen/usertype_radio_group_margin_top"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,22 +32,22 @@
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/customer_radio_button"
-            style="@style/AccountTypeRadioButtonText"
+            style="@style/UserTypeRadioButtonText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/accounttype_radio_button_color"
-            android:padding="@dimen/accounttype_radio_button_padding"
-            android:text="@string/accounttype_customer" />
+            android:buttonTint="@color/usertype_radio_button_color"
+            android:padding="@dimen/usertype_radio_button_padding"
+            android:text="@string/usertype_customer" />
 
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/owner_radio_button"
-            style="@style/AccountTypeRadioButtonText"
+            style="@style/UserTypeRadioButtonText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:buttonTint="@color/accounttype_radio_button_color"
-            android:padding="@dimen/accounttype_radio_button_padding"
-            android:text="@string/accounttype_owner" />
+            android:buttonTint="@color/usertype_radio_button_color"
+            android:padding="@dimen/usertype_radio_button_padding"
+            android:text="@string/usertype_owner" />
     </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

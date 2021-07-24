@@ -8,10 +8,10 @@
     <string name="registername_first_name_hint">First Name</string>
     <string name="registername_last_name_hint">Last Name</string>
 
-    <string name="accounttype_title">Account Type</string>
-    <string name="accounttype_are_you">Are you an owner or a customer?</string>
-    <string name="accounttype_customer">I\'m a customer</string>
-    <string name="accounttype_owner">I\'m a restaurant owner</string>
+    <string name="usertype_title">Account Type</string>
+    <string name="usertype_are_you">Are you an owner or a customer?</string>
+    <string name="usertype_customer">I\'m a customer</string>
+    <string name="usertype_owner">I\'m a restaurant owner</string>
 
     <string name="registeremail_title">Email</string>
     <string name="registeremail_whats_your_email">What\'s your Email?</string>

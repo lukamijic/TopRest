@@ -1,18 +1,18 @@
-package com.toprest.ui.accounttype
+package com.toprest.ui.usertype
 
 import com.toprest.controller.SignUpController
 import com.toprest.coreui.BaseViewModel
-import com.toprest.model.AccountType
+import com.toprest.sessionlib.model.domain.UserType
 import com.toprest.model.SignUpScreen
 import com.toprest.navigation.RoutingActionsDispatcher
 import io.reactivex.rxjava3.core.Scheduler
 
-class AccountTypeSelectionViewModel(
+class UserTypeSelectionViewModel(
     mainThreadScheduler: Scheduler,
     backgroundScheduler: Scheduler,
     routingActionsDispatcher: RoutingActionsDispatcher,
     private val controller: SignUpController
-) : BaseViewModel<AccountTypeSelectionViewState>(
+) : BaseViewModel<UserTypeSelectionViewState>(
     mainThreadScheduler,
     backgroundScheduler,
     routingActionsDispatcher
@@ -21,8 +21,8 @@ class AccountTypeSelectionViewModel(
     init {
         runCommand(controller.setScreen(SignUpScreen.SELECT_ACCOUNT_TYPE))
 
-        query(controller.accountType().map(::AccountTypeSelectionViewState).take(1))
+        query(controller.userType().map(::UserTypeSelectionViewState).take(1))
     }
 
-    fun setAccountType(accountType: AccountType) = runCommand(controller.setAccountType(accountType))
+    fun setUserType(userType: UserType) = runCommand(controller.setUserType(userType))
 }

@@ -18,8 +18,8 @@ import timber.log.Timber
 import kotlin.reflect.KClass
 
 abstract class BaseViewModel<BaseViewState : Any>(
-    private val mainThreadScheduler: Scheduler,
-    private val backgroundScheduler: Scheduler,
+    protected val mainThreadScheduler: Scheduler,
+    protected val backgroundScheduler: Scheduler,
     private val routingActionsDispatcher: RoutingActionsDispatcher
 ) : ViewModel() {
 

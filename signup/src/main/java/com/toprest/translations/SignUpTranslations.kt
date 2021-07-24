@@ -4,7 +4,7 @@ interface SignUpTranslations {
 
     fun nameTitle(): String
 
-    fun accountTypeTitle() : String
+    fun userType() : String
 
     fun emailTitle() : String
 

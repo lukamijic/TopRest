@@ -9,6 +9,7 @@ dependencies {
     implementation project(":commonui")
     implementation project(":formfieldlib")
     implementation project(":navigation")
+    implementation project(":sessionlib")
 
     implementation AndroidX.constraintLayout
     implementation UI.materialComponents

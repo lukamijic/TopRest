@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+
+apply from: "$rootDir/buildSrc/src/CommonAndroid.gradle"
+
+dependencies {
+    implementation project(":core")
+
+    api Firebase.firebaseAuth
+    api Firebase.firebaseDatabase
+}

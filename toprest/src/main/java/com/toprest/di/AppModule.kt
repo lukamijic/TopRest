@@ -17,5 +17,5 @@ fun appModule(): Module = module {
         RouterImpl(activity, fragmentManager, get())
     }
 
-    factory<InitialScreenResolver> { InitialScreenResolverImpl(get()) }
+    factory<InitialScreenResolver> { InitialScreenResolverImpl(get(), get()) }
 }
