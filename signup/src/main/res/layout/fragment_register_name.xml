@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toprest_background">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/SignUpScreenTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/signup_screen_title_margin_top"
+        android:layout_marginHorizontal="@dimen/signup_screen_title_margin_horizontal"
+        android:gravity="center_horizontal"
+        android:text="@string/registername_whats_your_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.coinme.formfieldlib.FormFieldView
+        android:id="@+id/first_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/signup_screen_field_margin_horizontal"
+        android:layout_marginTop="@dimen/registername_first_name_margin_top"
+        android:elevation="@dimen/elevation_8"
+        android:hint="@string/registername_first_name_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <com.coinme.formfieldlib.FormFieldView
+        android:id="@+id/last_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/signup_screen_field_margin_horizontal"
+        android:layout_marginTop="@dimen/registername_last_name_margin_top"
+        android:elevation="@dimen/elevation_8"
+        android:hint="@string/registername_last_name_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_name" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="signup_action_button_next">Next</string>
+    <string name="signup_action_button_create_account">Create Account</string>
+
+    <string name="registername_title">Full Name</string>
+    <string name="registername_whats_your_name">What\'s your name?</string>
+    <string name="registername_first_name_hint">First Name</string>
+    <string name="registername_last_name_hint">Last Name</string>
+
+    <string name="accounttype_title">Account Type</string>
+    <string name="accounttype_are_you">Are you an owner or a customer?</string>
+    <string name="accounttype_customer">I\'m a customer</string>
+    <string name="accounttype_owner">I\'m a restaurant owner</string>
+
+    <string name="registeremail_title">Email</string>
+    <string name="registeremail_whats_your_email">What\'s your Email?</string>
+    <string name="registeremail_email_hint">Email</string>
+    <string name="registeremail_email_error">Invalid Email Address</string>
+
+    <string name="registerpassword_title">Password</string>
+    <string name="registerpassword_set_up_password">Set up your password.</string>
+    <string name="registerpassword_password_hint">Password</string>
+    <string name="registerpassword_password_error">You password needs to have atleast 6 characters.</string>
+    <string name="registerpassword_repeat_password_hint">Repeat Password</string>
+    <string name="registerpassword_repeat_password_error">Your passwords do not match!</string>
+    <string name="registerpassword_account_creation_error">There was an error creating this account!</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="formfieldlib_cursor_color">@color/white</color>
+    <color name="formfieldlib_stroke">@color/white</color>
+    <color name="formfieldlib_active_border">@color/white</color>
+    <color name="formfieldlib_active_background">@color/pickled_bluewood</color>
+    <color name="formfieldlib_error_background">@color/pickled_bluewood_60</color>
+    <color name="formfieldlib_inactive_border">@color/ghost</color>
+    <color name="formfieldlib_inactive_background">@color/pickled_bluewood_60</color>
+</resources>

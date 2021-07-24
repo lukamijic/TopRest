@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SignUpScreenTitle" parent="Text.24">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="SignUpScreenErrorMessage" parent="Text.12">
+        <item name="android:textColor">@color/font_error</item>
+        <item name="android:drawableStart">@drawable/ic_error</item>
+        <item name="android:drawablePadding">@dimen/registeremail_email_error_icon_padding</item>
+    </style>
+
+    <style name="AccountTypeRadioButtonText" parent="Text.20"/>
+
+</resources>

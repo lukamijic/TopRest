@@ -19,6 +19,11 @@
     <dimen name="elevation_8">8dp</dimen>
     <dimen name="elevation_16">16dp</dimen>
 
-    <!-- View -->
+    <!-- Icon -->
+    <dimen name="icon_clickable_min_size">48dp</dimen>
+    <dimen name="icon_clickable_min_padding">12dp</dimen>
+    <dimen name="icon_back_margin">8dp</dimen>
+
+    <!-- Plate Spinner -->
     <dimen name="plate_spinner_size">240dp</dimen>
 </resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FormFieldView">
+        <attr name="android:hint" format="string" />
+        <attr name="android:textSize" format="dimension" />
+        <attr name="android:inputType" format="integer" />
+        <attr name="android:textCursorDrawable" format="reference" />
+        <attr name="android:textColor" format="color" />
+        <attr name="android:textColorHint" format="color" />
+        <attr name="android:fontFamily" format="string" />
+        <attr name="android:enabled" format="boolean"/>
+
+        <attr name="errorTextColor" format="color" />
+
+        <attr name="inactiveStateBackground" format="reference" />
+        <attr name="activeStateBackground" format="reference" />
+        <attr name="errorStateBackground" format="reference" />
+
+        <attr name="icon" format="reference" />
+        <attr name="iconPosition" format="enum" >
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="iconPaddingHorizontal" format="dimension" />
+    </declare-styleable>
+</resources>

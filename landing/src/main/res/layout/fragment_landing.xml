@@ -97,6 +97,7 @@
         <TextView
             android:id="@+id/log_in"
             style="@style/LandingLoginTextStyle"
+            android:background="?selectableItemBackground"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/landing_login_margin_top"
@@ -105,22 +106,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/continue_with_email"
             tools:text="Already have an account? Log In" />
-
-        <com.toprest.commonui.view.PlateSpinner
-            android:id="@+id/plate_spinner"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:elevation="@dimen/elevation_16"
-            android:alpha="0"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:alpha="1"
-            tools:visibility="visible" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

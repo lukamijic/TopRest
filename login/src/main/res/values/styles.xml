@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LoginErrorMessage" parent="Text.12">
+        <item name="android:textColor">@color/font_error</item>
+        <item name="android:drawableStart">@drawable/ic_error</item>
+        <item name="android:drawablePadding">@dimen/login_error_message_padding</item>
+    </style>
+</resources>
