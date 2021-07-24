@@ -1,6 +1,6 @@
 package com.toprest.controller
 
-import com.toprest.model.AccountType
+import com.toprest.sessionlib.model.domain.UserType
 import com.toprest.model.SignUpScreen
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable
@@ -25,9 +25,11 @@ interface SignUpController {
 
     fun lastName(): Flowable<String>
 
-    fun accountType(): Flowable<AccountType>
+    fun userType(): Flowable<UserType>
 
     fun email(): Flowable<String>
+
+    fun isEmailValid(): Flowable<Boolean>
 
     fun password(): Flowable<String>
 
@@ -37,7 +39,7 @@ interface SignUpController {
 
     fun arePasswordsMatched(): Flowable<Boolean>
 
-    fun isEmailValid(): Flowable<Boolean>
+    fun accountCreationFailedEvents(): Flowable<Any>
 
     fun setLoading(isLoading: Boolean) : Completable
 
@@ -45,7 +47,7 @@ interface SignUpController {
 
     fun setLastName(lastName: String): Completable
 
-    fun setAccountType(accountType: AccountType): Completable
+    fun setUserType(userType: UserType): Completable
 
     fun setEmail(email: String): Completable
 

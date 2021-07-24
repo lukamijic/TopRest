@@ -3,10 +3,11 @@ package com.toprest.navigation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.toprest.R
+import com.toprest.dashboard.ui.DashboardActivity
 import com.toprest.landing.ui.LandingFragment
 import com.toprest.login.ui.LoginActivity
 import com.toprest.navigation.ext.*
-import com.toprest.ui.accounttype.AccountTypeSelectionFragment
+import com.toprest.ui.usertype.UserTypeSelectionFragment
 import com.toprest.ui.registeremail.RegisterEmailFragment
 import com.toprest.ui.registername.RegisterNameFragment
 import com.toprest.ui.registerpassword.RegisterPasswordFragment
@@ -57,10 +58,10 @@ class RouterImpl(
         }
     }
 
-    override fun showAccountTypeSelection() {
-        fragmentManager.inTransactionAndAddToBackStack(AccountTypeSelectionFragment.TAG) {
+    override fun showUserTypeSelection() {
+        fragmentManager.inTransactionAndAddToBackStack(UserTypeSelectionFragment.TAG) {
             applyFadeInEnterAndFadeOutExitAnimation()
-            add(SIGN_UP_CONTAINER, AccountTypeSelectionFragment.newInstance(), AccountTypeSelectionFragment.TAG)
+            add(SIGN_UP_CONTAINER, UserTypeSelectionFragment.newInstance(), UserTypeSelectionFragment.TAG)
         }
     }
 
@@ -80,5 +81,9 @@ class RouterImpl(
 
     override fun showLogin() {
         activity.startActivity(LoginActivity.createIntent(activity))
+    }
+
+    override fun showHome() {
+        activity.startActivity(DashboardActivity.createIntent(activity))
     }
 }

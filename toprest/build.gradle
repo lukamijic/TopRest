@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 apply from: "$rootDir/buildSrc/src/CommonAndroid.gradle"
 apply plugin: 'kotlin-android'
@@ -15,8 +16,11 @@ dependencies {
     implementation project(":commonui")
     implementation project(":core")
     implementation project(":coreui")
+    implementation project(":dashboard")
+    implementation project(":firebaselib")
     implementation project(":landing")
     implementation project(":login")
+    implementation project(":sessionlib")
     implementation project(":signup")
     implementation project(":navigation")
 

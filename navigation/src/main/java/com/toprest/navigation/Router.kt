@@ -14,11 +14,13 @@ interface Router {
 
     fun showRegisterName()
 
-    fun showAccountTypeSelection()
+    fun showUserTypeSelection()
 
     fun showRegisterEmail()
 
     fun showRegisterPassword()
 
     fun showLogin()
+
+    fun showHome()
 }

@@ -8,9 +8,10 @@ import com.toprest.core.di.SERIAL_BACKGROUND_SCHEDULER
 import com.toprest.scope.SIGN_UP_SCOPE
 import com.toprest.scope.SignUpScopeHolder
 import com.toprest.scope.signUpGet
+import com.toprest.sessionlib.usecase.CreateUser
 import com.toprest.translations.SignUpTranslations
 import com.toprest.translations.SignUpTranslationsImpl
-import com.toprest.ui.accounttype.AccountTypeSelectionViewModel
+import com.toprest.ui.usertype.UserTypeSelectionViewModel
 import com.toprest.ui.registeremail.RegisterEmailViewModel
 import com.toprest.ui.registername.RegisterNameViewModel
 import com.toprest.ui.registerpassword.RegisterPasswordViewModel
@@ -43,7 +44,7 @@ fun signUpModule() : Module = module {
     }
 
     viewModel {
-        AccountTypeSelectionViewModel(
+        UserTypeSelectionViewModel(
             mainThreadScheduler = get(named(MAIN_SCHEDULER)),
             backgroundScheduler = get(named(BACKGROUND_SCHEDULER)),
             routingActionsDispatcher = get(),
@@ -79,7 +80,8 @@ fun signUpModule() : Module = module {
             SignUpControllerImpl(
                 translations = get(),
                 serialScheduler = get(named(SERIAL_BACKGROUND_SCHEDULER)),
-                routingActionsDispatcher = get()
+                routingActionsDispatcher = get(),
+                createUser = get<CreateUser>()
             )
         }
     }

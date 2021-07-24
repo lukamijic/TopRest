@@ -50,6 +50,14 @@ object RxJava {
     private const val android = "io.reactivex.rxjava3:rxandroid:$rxandroid_version"
 }
 
+object Firebase {
+    private const val firebase_bom_version = "28.3.0"
+
+    val firebaseBoM = "com.google.firebase:firebase-bom:$firebase_bom_version"
+    val firebaseAuth = "com.google.firebase:firebase-auth-ktx"
+    val firebaseDatabase = "com.google.firebase:firebase-database-ktx"
+}
+
 object Log {
     private val timber_version = "4.7.1"
 

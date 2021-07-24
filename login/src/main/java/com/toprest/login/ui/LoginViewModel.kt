@@ -2,10 +2,13 @@ package com.toprest.login.ui
 
 import android.util.Patterns
 import com.toprest.coreui.BaseViewModel
+import com.toprest.navigation.Router
 import com.toprest.navigation.RoutingActionsDispatcher
+import com.toprest.sessionlib.usecase.Login
 import io.reactivex.rxjava3.core.Completable.*
 import io.reactivex.rxjava3.core.Flowable.*
 import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.functions.BiFunction
 import io.reactivex.rxjava3.processors.BehaviorProcessor
 import io.reactivex.rxjava3.processors.PublishProcessor
 import java.util.concurrent.TimeUnit
@@ -19,6 +22,7 @@ class LoginViewModel(
     mainThreadScheduler: Scheduler,
     backgroundScheduler: Scheduler,
     routingActionsDispatcher: RoutingActionsDispatcher,
+    private val login: Login
 ) : BaseViewModel<LoginViewState>(
     mainThreadScheduler,
     backgroundScheduler,
@@ -87,16 +91,26 @@ class LoginViewModel(
                 .map(LoginViewState::LoginError)
         )
 
-        query(loading.map(LoginViewState::Loading))
+        query(loading.observeOn(backgroundScheduler).map(LoginViewState::Loading))
     }
 
-    fun setEmail(email: String) = this.email.onNext(email)
+    fun setEmail(email: String) = runCommand(fromAction { this.email.onNext(email) })
 
-    fun setPassword(password: String) = this.password.onNext(password)
+    fun setPassword(password: String) = runCommand(fromAction { this.password.onNext(password) })
 
-    fun login() = runCommand(
-        fromAction { loading.onNext(true) }
-            .delay(3000, TimeUnit.MILLISECONDS)
-            .andThen(fromAction { loading.onNext(false) })
-    )
+    fun login() {
+        loading.onNext(true)
+        runCommand(
+            combineLatest(
+                email,
+                password,
+                BiFunction(Login::Param)
+            )
+                .firstOrError()
+                .flatMapCompletable { login(it) }
+                .doOnComplete { dispatchRoutingAction(Router::showHome) }
+                .doOnError { loginError.onNext(LOGIN_ERROR_EVENT) }
+                .doFinally { loading.onNext(false) }
+        )
+    }
 }

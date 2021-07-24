@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1050496979959",
+    "firebase_url": "https://toprest-4c560-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "toprest-4c560",
+    "storage_bucket": "toprest-4c560.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050496979959:android:09bcaae483751e3628d4f2",
+        "android_client_info": {
+          "package_name": "com.toprest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050496979959-5kd76le17r9uvogrjeastul1uoseejpn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHhyGvGqHJ7lRhzKvHBL3aBuaKsHGS8UA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050496979959-5kd76le17r9uvogrjeastul1uoseejpn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

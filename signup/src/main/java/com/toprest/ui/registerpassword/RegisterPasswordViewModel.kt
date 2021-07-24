@@ -23,8 +23,6 @@ class RegisterPasswordViewModel(
     routingActionsDispatcher
 ) {
 
-    private val accountCreationError = PublishProcessor.create<Any>()
-
     init {
         runCommand(controller.setScreen(SignUpScreen.REGISTER_PASSWORD))
 
@@ -55,7 +53,7 @@ class RegisterPasswordViewModel(
 
         query(
             merge(
-                accountCreationError.map { true },
+                controller.accountCreationFailedEvents().map { true },
                 controller.password().map { false },
                 controller.repeatedPassword().map { false }
             ).map(RegisterPasswordViewState::AccountCreationError)
