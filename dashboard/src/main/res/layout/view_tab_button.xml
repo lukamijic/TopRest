@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:layout_height="wrap_content"
+    tools:layout_width="60dp"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <ImageView
+        android:id="@+id/icon"
+        style="@style/TabBarIcon"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_home_unselected" />
+
+    <TextView
+        android:id="@+id/text"
+        style="@style/TabBarText"
+        android:layout_gravity="center"
+        tools:text="Home" />
+</merge>

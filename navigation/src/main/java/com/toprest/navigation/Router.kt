@@ -8,6 +8,10 @@ interface Router {
 
     fun goBack()
 
+    fun showStartActivity()
+
+    fun showMainActivity()
+
     fun showLandingScreen()
 
     fun showSignUpFlow()
@@ -22,5 +26,9 @@ interface Router {
 
     fun showLogin()
 
-    fun showHome()
+    fun showDashboard()
+
+    fun showAddRestaurant()
+
+    fun closeAddRestaurant()
 }

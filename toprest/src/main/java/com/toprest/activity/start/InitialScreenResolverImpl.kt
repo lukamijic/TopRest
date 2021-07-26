@@ -16,7 +16,7 @@ class InitialScreenResolverImpl(
                 if (user == User.EMPTY) {
                     routingActionsDispatcher.dispatch { it.showLandingScreen() }
                 } else {
-                    routingActionsDispatcher.dispatch { it.showHome() }
+                    routingActionsDispatcher.dispatch { it.showMainActivity() }
                 }
             }
     }

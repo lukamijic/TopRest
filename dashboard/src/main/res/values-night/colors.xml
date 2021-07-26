@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tabbutton_icon_selected">@color/pale_sky</color>
+    <color name="tabbutton_icon_unselected">@color/pale_sky_60</color>
+</resources>

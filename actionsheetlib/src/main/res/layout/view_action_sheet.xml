@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.coordinatorlayout.widget.CoordinatorLayout">
+
+    <View
+        android:id="@+id/transparent_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/toprest_background" />
+
+    <FrameLayout
+        android:id="@+id/action_sheet_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <FrameLayout
+            android:id="@+id/view_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/actionsheet_padding_top"
+            android:paddingBottom="@dimen/actionsheet_padding_bottom"/>
+
+        <ImageView
+            android:id="@+id/handle"
+            android:layout_width="@dimen/actionsheet_handle_width"
+            android:layout_height="@dimen/actionsheet_handle_height"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/actionsheet_handle_margin_top"
+            android:src="@drawable/ic_action_sheet_handle" />
+    </FrameLayout>
+</merge>

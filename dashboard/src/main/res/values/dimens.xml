@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tabbutton_text_margin_top">4dp</dimen>
+    <dimen name="tabbutton_icon_size">30dp</dimen>
+    <dimen name="tabbutton_icon_margin_top">16dp</dimen>
+
+    <dimen name="tabbar_shadow_height">15dp</dimen>
+    <dimen name="tabbar_height">68dp</dimen>
+</resources>

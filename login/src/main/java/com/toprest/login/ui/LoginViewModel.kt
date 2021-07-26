@@ -108,7 +108,7 @@ class LoginViewModel(
             )
                 .firstOrError()
                 .flatMapCompletable { login(it) }
-                .doOnComplete { dispatchRoutingAction(Router::showHome) }
+                .doOnComplete { dispatchRoutingAction(Router::showMainActivity) }
                 .doOnError { loginError.onNext(LOGIN_ERROR_EVENT) }
                 .doFinally { loading.onNext(false) }
         )

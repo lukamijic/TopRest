@@ -9,6 +9,8 @@
         <attr name="android:textColorHint" format="color" />
         <attr name="android:fontFamily" format="string" />
         <attr name="android:enabled" format="boolean"/>
+        <attr name="android:minLines" format="boolean"/>
+        <attr name="android:maxLines" format="boolean"/>
 
         <attr name="errorTextColor" format="color" />
 

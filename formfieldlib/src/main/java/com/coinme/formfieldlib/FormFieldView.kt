@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.View
 import android.view.View.OnFocusChangeListener
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
@@ -28,6 +29,7 @@ private const val DEFAULT_ICON_POSITION = ICON_POSITION_RIGHT
 private const val DEFAULT_ICON_PADDING = 0
 private const val EDIT_TEXT_WEIGHT = 1f
 private const val DEFAULT_IS_EDITING_ENABLED = true
+private const val DEFAULT_LINES = 1
 
 class FormFieldView : FrameLayout {
 
@@ -65,6 +67,9 @@ class FormFieldView : FrameLayout {
     private var isPasswordShown: Boolean = false
     private var showFrame = true
     private var currentBackgroundDrawable = ResourcesCompat.getDrawable(resources, R.drawable.bg_form_field_inactive, null)
+
+    private var maxLines = DEFAULT_LINES
+    private var minLines = DEFAULT_LINES
 
     private var textWatcher: TextWatcher? = null
 
@@ -209,6 +214,8 @@ class FormFieldView : FrameLayout {
             withReference(R.styleable.FormFieldView_icon) { iconDrawable = it }
             withInt(R.styleable.FormFieldView_iconPosition, ICON_POSITION_RIGHT) { iconPosition = it }
             withDimensionPixelSize(R.styleable.FormFieldView_iconPaddingHorizontal, DEFAULT_ICON_PADDING) { iconPaddingHorizontal = it }
+            withInt(R.styleable.FormFieldView_android_maxLines, DEFAULT_LINES) { maxLines = it}
+            withInt(R.styleable.FormFieldView_android_minLines, DEFAULT_LINES) { minLines = it}
         }
     }
 
@@ -225,6 +232,8 @@ class FormFieldView : FrameLayout {
             onFocusChangeListener = focusChangeListener
 
             isEnabled = _isEditingEnabled
+
+            gravity = Gravity.START or Gravity.TOP
         }
 
         return editText

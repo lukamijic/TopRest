@@ -187,7 +187,7 @@ class SignUpControllerImpl(
                     .andThen(createUser(it))
             }.doOnComplete {
                 loading.onNext(false)
-                routingActionsDispatcher.dispatch(Router::showHome)
+                routingActionsDispatcher.dispatch(Router::showMainActivity)
             }.doOnError {
                 loading.onNext(false)
                 accountCreationFailedEvent.onNext(ACCOUNT_CREATION_FAILED_EVENT)

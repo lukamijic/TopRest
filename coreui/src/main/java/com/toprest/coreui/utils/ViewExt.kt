@@ -26,6 +26,10 @@ fun View.enable(isEnabled: Boolean = true) {
 
 fun View.disable() = enable(isEnabled = false)
 
+fun View.removePadding() {
+    setPadding(0, 0, 0, 0)
+}
+
 @SuppressLint("ClickableViewAccessibility")
 fun View.disableTouches() {
     setOnTouchListener { _, _ -> true }

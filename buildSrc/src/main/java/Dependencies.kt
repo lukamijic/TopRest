@@ -17,7 +17,7 @@ object Kotlin {
 
 object UI {
 
-    private const val material_version = "1.4.0"
+    private const val material_version = "1.1.0"
 
     val materialComponents = "com.google.android.material:material:$material_version"
 }
