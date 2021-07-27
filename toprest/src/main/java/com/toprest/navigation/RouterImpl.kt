@@ -3,7 +3,10 @@ package com.toprest.navigation
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.toprest.R
-import com.toprest.dashboard.ui.DashboardActivity
+import com.toprest.activity.main.MainActivity
+import com.toprest.activity.start.StartActivity
+import com.toprest.addrestaurant.ui.AddRestaurantFragment
+import com.toprest.dashboard.ui.DashboardFragment
 import com.toprest.landing.ui.LandingFragment
 import com.toprest.login.ui.LoginActivity
 import com.toprest.navigation.ext.*
@@ -17,6 +20,7 @@ private const val LAST_FRAGMENT = 0
 
 private const val START_CONTAINER = R.id.start_container
 private const val SIGN_UP_CONTAINER = R.id.signup_container
+private const val MAIN_CONTAINER = R.id.main_container
 
 class RouterImpl(
     private val activity: AppCompatActivity,
@@ -40,6 +44,16 @@ class RouterImpl(
                 finishHostActivity()
             }
         }
+    }
+
+    override fun showStartActivity() {
+        activity.startActivity(StartActivity.createIntent(activity))
+        activity.finishAffinity()
+    }
+
+    override fun showMainActivity() {
+        activity.startActivity(MainActivity.createIntent(activity))
+        activity.finishAffinity()
     }
 
     override fun showLandingScreen() {
@@ -83,7 +97,19 @@ class RouterImpl(
         activity.startActivity(LoginActivity.createIntent(activity))
     }
 
-    override fun showHome() {
-        activity.startActivity(DashboardActivity.createIntent(activity))
+    override fun showDashboard() {
+        fragmentManager.inTransaction {
+            add(MAIN_CONTAINER, DashboardFragment.newInstance(), DashboardFragment.TAG)
+        }
+    }
+
+    override fun showAddRestaurant() {
+        fragmentManager.inTransactionAndAddToBackStack(AddRestaurantFragment.TAG) {
+            add(MAIN_CONTAINER, AddRestaurantFragment.newInstance(), AddRestaurantFragment.TAG)
+        }
+    }
+
+    override fun closeAddRestaurant() {
+        markForClosing(AddRestaurantFragment.TAG)
     }
 }

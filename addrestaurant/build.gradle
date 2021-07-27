@@ -1,0 +1,18 @@
+apply plugin: 'com.android.library'
+
+apply from: "$rootDir/buildSrc/src/CommonAndroid.gradle"
+
+dependencies {
+
+    implementation project(":actionsheetlib")
+    implementation project(":core")
+    implementation project(":coreui")
+    implementation project(":commonui")
+    implementation project(":formfieldlib")
+    implementation project(":navigation")
+    implementation project(":restaurantlib")
+    implementation project(":sessionlib")
+
+    implementation AndroidX.constraintLayout
+    implementation UI.materialComponents
+}

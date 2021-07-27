@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="actionsheet_padding_top">48dp</dimen>
+    <dimen name="actionsheet_padding_bottom">24dp</dimen>
+    <dimen name="actionsheet_handle_width">30dp</dimen>
+    <dimen name="actionsheet_handle_height">4dp</dimen>
+    <dimen name="actionsheet_handle_margin_top">16dp</dimen>
+    <dimen name="actionsheet_corner_radius">20dp</dimen>
+    <dimen name="actionsheet_elevation">10dp</dimen>
+</resources>

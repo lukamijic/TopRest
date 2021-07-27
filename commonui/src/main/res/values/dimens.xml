@@ -26,4 +26,7 @@
 
     <!-- Plate Spinner -->
     <dimen name="plate_spinner_size">240dp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_height">56dp</dimen>
 </resources>

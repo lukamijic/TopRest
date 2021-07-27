@@ -10,6 +10,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/actionsheetlib" />
+            <option value="$PROJECT_DIR$/addrestaurant" />
             <option value="$PROJECT_DIR$/buildSrc" />
             <option value="$PROJECT_DIR$/commonui" />
             <option value="$PROJECT_DIR$/core" />
@@ -17,9 +19,12 @@
             <option value="$PROJECT_DIR$/dashboard" />
             <option value="$PROJECT_DIR$/firebaselib" />
             <option value="$PROJECT_DIR$/formfieldlib" />
+            <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/landing" />
             <option value="$PROJECT_DIR$/login" />
             <option value="$PROJECT_DIR$/navigation" />
+            <option value="$PROJECT_DIR$/profile" />
+            <option value="$PROJECT_DIR$/restaurantlib" />
             <option value="$PROJECT_DIR$/sessionlib" />
             <option value="$PROJECT_DIR$/signup" />
             <option value="$PROJECT_DIR$/toprest" />

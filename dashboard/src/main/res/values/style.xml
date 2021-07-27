@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TabBarText" parent="Text.12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/tabbutton_text_margin_top</item>
+        <item name="fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="TabBarIcon">
+        <item name="android:layout_width">@dimen/tabbutton_icon_size</item>
+        <item name="android:layout_height">@dimen/tabbutton_icon_size</item>
+        <item name="android:layout_marginTop">@dimen/tabbutton_icon_margin_top</item>
+    </style>
+
+    <style name="TabBarButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="layout_constraintDimensionRatio">1:1</item>
+        <item name="android:background">@drawable/tab_bar_button_ripple</item>
+    </style>
+</resources>

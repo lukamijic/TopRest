@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+
+apply from: "$rootDir/buildSrc/src/CommonAndroid.gradle"
+
+dependencies {
+    implementation project(":coreui")
+    implementation project(":commonui")
+
+    implementation UI.materialComponents
+}

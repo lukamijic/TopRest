@@ -13,16 +13,20 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(":addrestaurant")
     implementation project(":commonui")
     implementation project(":core")
     implementation project(":coreui")
     implementation project(":dashboard")
     implementation project(":firebaselib")
+    implementation project(":home")
     implementation project(":landing")
     implementation project(":login")
+    implementation project(":navigation")
+    implementation project(":profile")
+    implementation project(":restaurantlib")
     implementation project(":sessionlib")
     implementation project(":signup")
-    implementation project(":navigation")
 
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

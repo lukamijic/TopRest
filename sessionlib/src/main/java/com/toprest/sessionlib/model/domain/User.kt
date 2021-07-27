@@ -12,4 +12,6 @@ data class User(
 
         val EMPTY = User("", "", "", "", UserType.CUSTOMER)
     }
+
+    fun isEmpty() = this == EMPTY
 }

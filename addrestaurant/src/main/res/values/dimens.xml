@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="addrestaurant_title_margin_top">18dp</dimen>
+    <dimen name="addrestaurant_title_margin_horizontal">24dp</dimen>
+    <dimen name="addrestaurant_name_margin_top">8dp</dimen>
+    <dimen name="addrestaurant_name_margin_horizontal">24dp</dimen>
+    <dimen name="addrestaurant_description_margin_top">8dp</dimen>
+    <dimen name="addrestaurant_description_margin_horizontal">24dp</dimen>
+    <dimen name="addrestaurant_description_margin_bottom">8dp</dimen>
+    <dimen name="addrestaurant_button_margin_horizontal">24dp</dimen>
+</resources>

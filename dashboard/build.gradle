@@ -7,7 +7,9 @@ dependencies {
     implementation project(":core")
     implementation project(":coreui")
     implementation project(":commonui")
+    implementation project(":home")
     implementation project(":navigation")
+    implementation project(":profile")
 
     implementation AndroidX.constraintLayout
     implementation UI.materialComponents

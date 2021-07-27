@@ -3,6 +3,7 @@ package com.toprest.navigation
 import android.os.Handler
 import android.os.Looper
 import androidx.fragment.app.FragmentManager
+import com.toprest.navigation.ext.isOnBackStack
 import com.toprest.navigation.ext.peekBackStack
 
 private const val ROUTING_ACTION_THROTTLE_WINDOW = 300
@@ -47,6 +48,24 @@ abstract class CloseableRouter(
                 }
             }
         }
+    }
+
+    fun markForClosing(backStackTag: String) = dispatchOnMainThread {
+        fragmentManager.peekBackStack()?.let {
+            if (it.name == backStackTag) {
+                fragmentManager.popBackStackImmediate()
+                return@dispatchOnMainThread
+            }
+        } ?: removeAllMarkedForClosingEntries()
+
+        if (!fragmentManager.isOnBackStack(backStackTag)) {
+            return@dispatchOnMainThread
+        }
+
+        if (closeableRouterContext.markedForClosing.any { it == backStackTag }) {
+            return@dispatchOnMainThread
+        }
+        closeableRouterContext.markedForClosing.add(backStackTag)
     }
 
     protected fun removeAllMarkedForClosingEntries() = dispatchOnMainThread { closeableRouterContext.markedForClosing.clear() }

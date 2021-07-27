@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ActionSheet">
+        <attr name="actionSheetBackgroundColor" format="color" />
+        <attr name="actionSheetColor" format="color" />
+        <attr name="hasTransparentBackground" format="boolean" />
+        <attr name="actionSheetWrapContent" format="boolean" />
+        <attr name="actionSheetAutoExpand" format="boolean" />
+        <attr name="actionSheetBackgroundMaxAlpha" format="float" />
+        <attr name="actionSheetHasRoundedTop" format="boolean" />
+        <attr name="actionSheetStyle" format="enum">
+            <enum name="ActionSheet" value="1" />
+            <enum name="BottomDialog" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>
