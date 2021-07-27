@@ -16,4 +16,6 @@ class HomeViewModel(
 ) {
 
     fun openAddRestaurant() = dispatchRoutingAction(Router::showAddRestaurant)
+
+    fun openLeaveReview() = dispatchRoutingAction { it.showLeaveReview("-MfeAjA5G3WYbMS07Kc5") }
 }

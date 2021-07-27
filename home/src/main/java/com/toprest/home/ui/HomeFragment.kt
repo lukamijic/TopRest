@@ -18,5 +18,6 @@ class HomeFragment : BaseFragment<HomeViewState, FragmentHomeBinding>(FragmentHo
 
     override fun FragmentHomeBinding.initialiseView(savedInstanceState: Bundle?) {
         addRest.setOnClickListener { model.openAddRestaurant() }
+        addRev.setOnClickListener { model.openLeaveReview() }
     }
 }

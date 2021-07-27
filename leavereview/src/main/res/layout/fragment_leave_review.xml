@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/empty_space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@color/actionsheet_overlay"
+        app:layout_constraintBottom_toTopOf="@id/action_sheet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.toprest.actionsheetlib.ActionSheet
+        android:id="@+id/action_sheet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:actionSheetAutoExpand="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/LeaveReviewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/leavereview_title_margin_horizontal"
+                android:layout_marginTop="@dimen/leavereview_title_margin_top"
+                android:text="@string/leavereview_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/stars_container"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/leavereview_stars_container_margin_horizontal"
+                android:layout_marginTop="@dimen/leavereview_title_margin_top"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title">
+
+                <ImageView
+                    android:id="@+id/star1"
+                    style="@style/IconButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/star2"
+                    style="@style/IconButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/star3"
+                    style="@style/IconButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/star4"
+                    style="@style/IconButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_star" />
+
+                <ImageView
+                    android:id="@+id/star5"
+                    style="@style/IconButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_star" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/date_of_visit_message"
+                style="@style/LeaveReviewDateOfVisit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/leavereview_date_of_visit_margin_start"
+                android:layout_marginTop="@dimen/leavereview_date_of_visit_margin_top"
+                android:text="@string/leavereview_date_of_visit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stars_container" />
+
+            <com.coinme.formfieldlib.FormFieldView
+                android:id="@+id/date_of_visit_field"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/leavereview_date_of_visit_field_margin_horizontal"
+                android:clickable="false"
+                android:hint="@string/leavereview_date_of_visit_hint"
+                android:enabled="false"
+                app:layout_constraintWidth_percent="0.5"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintBottom_toBottomOf="@id/date_of_visit_message"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/date_of_visit_message"
+                app:layout_constraintTop_toTopOf="@id/date_of_visit_message" />
+
+            <View
+                android:id="@+id/date_of_visit_field_click_interceptor"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:elevation="@dimen/elevation_8"
+                app:layout_constraintTop_toTopOf="@id/date_of_visit_field"
+                app:layout_constraintStart_toStartOf="@id/date_of_visit_field"
+                app:layout_constraintBottom_toBottomOf="@id/date_of_visit_field"
+                app:layout_constraintEnd_toEndOf="@id/date_of_visit_field"/>
+
+            <com.coinme.formfieldlib.FormFieldView
+                android:id="@+id/review"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/leavereview_review_margin_horizontal"
+                android:layout_marginVertical="@dimen/leavereview_review_margin_vertical"
+                android:elevation="@dimen/elevation_8"
+                android:hint="@string/leavereview_review_hint"
+                android:minLines="5"
+                android:maxLines="5"
+                app:layout_constraintBottom_toTopOf="@id/review_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_of_visit_field_click_interceptor" />
+
+            <com.toprest.commonui.view.AccentButton
+                android:id="@+id/review_button"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginHorizontal="@dimen/leavereview_button_margin_horizontal"
+                android:enabled="false"
+                android:text="@string/leavereview_review"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.toprest.actionsheetlib.ActionSheet>
+
+    <com.toprest.commonui.view.PlateSpinner
+        android:id="@+id/plate_spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/elevation_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

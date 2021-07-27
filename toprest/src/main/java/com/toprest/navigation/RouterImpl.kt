@@ -8,6 +8,7 @@ import com.toprest.activity.start.StartActivity
 import com.toprest.addrestaurant.ui.AddRestaurantFragment
 import com.toprest.dashboard.ui.DashboardFragment
 import com.toprest.landing.ui.LandingFragment
+import com.toprest.leavereview.ui.LeaveReviewFragment
 import com.toprest.login.ui.LoginActivity
 import com.toprest.navigation.ext.*
 import com.toprest.ui.usertype.UserTypeSelectionFragment
@@ -111,5 +112,15 @@ class RouterImpl(
 
     override fun closeAddRestaurant() {
         markForClosing(AddRestaurantFragment.TAG)
+    }
+
+    override fun showLeaveReview(restaurantId: String) {
+        fragmentManager.inTransactionAndAddToBackStack(LeaveReviewFragment.TAG) {
+            add(MAIN_CONTAINER, LeaveReviewFragment.newInstance(restaurantId), LeaveReviewFragment.TAG)
+        }
+    }
+
+    override fun closeLeaveReview() {
+        markForClosing(LeaveReviewFragment.TAG)
     }
 }
