@@ -10,4 +10,7 @@ class RestaurantSourceImpl(
     override fun createRestaurant(ownerId: String, name: String, description: String): Completable =
         client.createRestaurant(ownerId, name, description)
             .flatMapCompletable { restaurantId -> client.storeRestaurantOwnership(ownerId, restaurantId) }
+
+    override fun leaveReview(restaurantId: String, reviewerId: String, review: String, score: Int, dateOfVisit: String): Completable =
+        client.leaveReview(restaurantId, reviewerId, review, score, dateOfVisit)
 }

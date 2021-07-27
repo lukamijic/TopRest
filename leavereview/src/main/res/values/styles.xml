@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="LeaveReviewTitle" parent="Text.16">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="LeaveReviewDateOfVisit" parent="Text.16"/>
+</resources>

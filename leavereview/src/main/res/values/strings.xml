@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="leavereview_title">Leave Review</string>
+    <string name="leavereview_review">Review</string>
+    <string name="leavereview_date_of_visit">Date of Visit:</string>
+    <string name="leavereview_date_of_visit_hint">DD/MM/YYYY</string>
+    <string name="leavereview_review_hint">Review</string>
+</resources>
