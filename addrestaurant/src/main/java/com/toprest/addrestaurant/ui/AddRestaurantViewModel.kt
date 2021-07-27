@@ -3,16 +3,22 @@ package com.toprest.addrestaurant.ui
 import com.toprest.coreui.BaseViewModel
 import com.toprest.navigation.Router
 import com.toprest.navigation.RoutingActionsDispatcher
+import com.toprest.restaurantlib.usecase.CreateRestaurant
+import com.toprest.sessionlib.model.domain.User
+import com.toprest.sessionlib.usecase.QueryUser
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable.*
 import io.reactivex.rxjava3.core.Scheduler
+import io.reactivex.rxjava3.functions.Function3
 import io.reactivex.rxjava3.processors.BehaviorProcessor
 import java.util.concurrent.TimeUnit
 
 class AddRestaurantViewModel(
     mainThreadScheduler: Scheduler,
     backgroundScheduler: Scheduler,
-    routingActionsDispatcher: RoutingActionsDispatcher
+    routingActionsDispatcher: RoutingActionsDispatcher,
+    private val queryUser: QueryUser,
+    private val createRestaurant: CreateRestaurant
 ) : BaseViewModel<AddRestaurantViewState>(
     mainThreadScheduler,
     backgroundScheduler,
@@ -48,9 +54,16 @@ class AddRestaurantViewModel(
     fun addRestaurant() {
         isLoading.onNext(true)
         runCommand(
-            Completable.fromAction {  }
-                .delay(3000, TimeUnit.MILLISECONDS)
+            combineLatest(
+                queryUser().map(User::id),
+                restaurantName,
+                restaurantDescription,
+                Function3(CreateRestaurant::Param)
+            )
+                .firstOrError()
+                .flatMapCompletable(createRestaurant::invoke)
                 .doOnComplete { close() }
+                .doFinally { isLoading.onNext(false) }
         )
     }
 

@@ -9,20 +9,29 @@ abstract class FirebaseClient(
     private val backgroundScheduler: Scheduler
 ) {
 
-    fun <T> Task<T>.execute() = Single.create<T> { emitter ->
+    fun <T, U> Task<T>.get(mapper: (T?) -> U) = Single.create<U> {emitter ->
         onCompleteListener {
             if (it.isSuccessful) {
-                emitter.onSuccess(it.result!!)
+                emitter.onSuccess(mapper(it.result))
             } else {
                 emitter.onError(it.exception!!)
             }
         }
     }
 
-    fun <T> Task<T>.execute(onSuccess: () -> Unit) = Completable.create { emitter ->
+    fun <T> Task<T>.get() = Single.create<T> { emitter ->
         onCompleteListener {
             if (it.isSuccessful) {
-                onSuccess()
+                emitter.onSuccess(it.result)
+            } else {
+                emitter.onError(it.exception!!)
+            }
+        }
+    }
+
+    fun <T> Task<T>.execute() = Completable.create { emitter ->
+        onCompleteListener {
+            if (it.isSuccessful) {
                 emitter.onComplete()
             } else {
                 emitter.onError(it.exception!!)

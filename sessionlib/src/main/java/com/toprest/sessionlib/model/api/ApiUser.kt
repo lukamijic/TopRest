@@ -15,6 +15,8 @@ data class ApiUser(
 
     companion object {
 
+        val EMPTY = ApiUser()
+
         fun fromUser(user: User) = with(user) {
             ApiUser(
                 id,
@@ -26,11 +28,17 @@ data class ApiUser(
         }
     }
 
-    fun toUser() = User(
-        id!!,
-        firstName!!,
-        lastName!!,
-        email!!,
-        UserType.fromName(userType!!)
-    )
+    fun toUser() = if (isEmpty()) {
+        User.EMPTY
+    } else {
+        User(
+            id!!,
+            firstName!!,
+            lastName!!,
+            email!!,
+            UserType.fromName(userType!!)
+        )
+    }
+
+    fun isEmpty() = this === EMPTY
 }

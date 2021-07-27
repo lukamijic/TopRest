@@ -14,7 +14,9 @@ fun addRestaurantModule() : Module = module {
         AddRestaurantViewModel(
             mainThreadScheduler = get(named(MAIN_SCHEDULER)),
             backgroundScheduler = get(named(BACKGROUND_SCHEDULER)),
-            routingActionsDispatcher = get()
+            routingActionsDispatcher = get(),
+            queryUser = get(),
+            createRestaurant = get()
         )
     }
 }

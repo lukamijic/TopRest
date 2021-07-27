@@ -7,6 +7,8 @@ import io.reactivex.rxjava3.core.Flowable
 
 interface SessionSource {
 
+    fun isSignedIn() : Flowable<Boolean>
+
     fun user(): Flowable<User>
 
     fun login(email: String, password: String) : Completable
