@@ -21,11 +21,12 @@ dependencies {
     implementation project(":firebaselib")
     implementation project(":home")
     implementation project(":landing")
+    implementation project(':leavereview')
     implementation project(":login")
     implementation project(":navigation")
     implementation project(":profile")
     implementation project(":restaurantlib")
-    implementation project(':leavereview')
+    implementation project(":reviewreply")
     implementation project(":sessionlib")
     implementation project(":signup")
 

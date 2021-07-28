@@ -2,6 +2,7 @@ package com.toprest.restaurantlib.client
 
 import com.google.firebase.database.DatabaseReference
 import com.toprest.firebaselib.client.FirebaseClient
+import com.toprest.restaurantlib.model.api.ApiReply
 import com.toprest.restaurantlib.model.api.ApiRestaurant
 import com.toprest.restaurantlib.model.api.ApiReview
 import io.reactivex.rxjava3.core.Completable
@@ -11,6 +12,7 @@ import io.reactivex.rxjava3.core.Single
 private const val RESTAURANTS_NODE = "restaurants"
 private const val OWNERS_NODE = "owners"
 private const val REVIEWS_NODE = "reviews"
+private const val REPLY_NODE = "reply"
 
 class RestaurantClientImpl(
     private val database: DatabaseReference,
@@ -40,4 +42,14 @@ class RestaurantClientImpl(
         return newReviewNode.setValue(ApiReview(reviewId, reviewerId, review, score, dateOfVisit, System.currentTimeMillis()))
             .execute()
     }
+
+    override fun replyToReview(restaurantId: String, reviewId: String, reply: String) : Completable =
+        database
+            .child(RESTAURANTS_NODE)
+            .child(restaurantId)
+            .child(REVIEWS_NODE)
+            .child(reviewId)
+            .child(REPLY_NODE)
+            .setValue(ApiReply(reply, System.currentTimeMillis()))
+            .execute()
 }

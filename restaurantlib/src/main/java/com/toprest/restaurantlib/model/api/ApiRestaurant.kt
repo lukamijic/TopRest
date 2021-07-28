@@ -7,5 +7,6 @@ data class ApiRestaurant(
     val id: String? = null,
     val ownerId: String? = null,
     val name: String? = null,
-    val description: String? = null
+    val description: String? = null,
+    val reply: ApiReply? = null
 )
