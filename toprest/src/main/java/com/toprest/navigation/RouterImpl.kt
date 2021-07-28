@@ -2,6 +2,7 @@ package com.toprest.navigation
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
+import com.tempo.reply.ui.ReviewReplyFragment
 import com.toprest.R
 import com.toprest.activity.main.MainActivity
 import com.toprest.activity.start.StartActivity
@@ -122,5 +123,15 @@ class RouterImpl(
 
     override fun closeLeaveReview() {
         markForClosing(LeaveReviewFragment.TAG)
+    }
+
+    override fun showReviewReply(restaurantId: String, reviewId: String) {
+        fragmentManager.inTransactionAndAddToBackStack(ReviewReplyFragment.TAG) {
+            add(MAIN_CONTAINER, ReviewReplyFragment.newInstance(restaurantId, reviewId), ReviewReplyFragment.TAG)
+        }
+    }
+
+    override fun closeReviewReply() {
+        markForClosing(ReviewReplyFragment.TAG)
     }
 }

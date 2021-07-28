@@ -7,4 +7,6 @@ interface RestaurantSource {
     fun createRestaurant(ownerId: String, name: String, description: String) : Completable
 
     fun leaveReview(restaurantId: String, reviewerId: String, review: String, score: Int, dateOfVisit: String) : Completable
+
+    fun replyToReview(restaurantId: String, reviewId: String, reply: String) : Completable
 }

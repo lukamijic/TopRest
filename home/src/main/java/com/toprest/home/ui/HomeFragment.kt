@@ -2,6 +2,7 @@ package com.toprest.home.ui
 
 import android.os.Bundle
 import com.toprest.coreui.BaseFragment
+import com.toprest.coreui.utils.onClick
 import com.toprest.home.databinding.FragmentHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -19,5 +20,6 @@ class HomeFragment : BaseFragment<HomeViewState, FragmentHomeBinding>(FragmentHo
     override fun FragmentHomeBinding.initialiseView(savedInstanceState: Bundle?) {
         addRest.setOnClickListener { model.openAddRestaurant() }
         addRev.setOnClickListener { model.openLeaveReview() }
+        addRep.onClick { model.openReplyReview() }
     }
 }

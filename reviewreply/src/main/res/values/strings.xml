@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reviewreply_title">Reply</string>
+    <string name="reviewreply_reply_hint">Enter your reply</string>
+    <string name="reviewreply_button_text">Reply</string>
+</resources>

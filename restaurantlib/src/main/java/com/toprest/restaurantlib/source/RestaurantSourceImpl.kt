@@ -13,4 +13,7 @@ class RestaurantSourceImpl(
 
     override fun leaveReview(restaurantId: String, reviewerId: String, review: String, score: Int, dateOfVisit: String): Completable =
         client.leaveReview(restaurantId, reviewerId, review, score, dateOfVisit)
+
+    override fun replyToReview(restaurantId: String, reviewId: String, reply: String): Completable =
+        client.replyToReview(restaurantId, reviewId, reply)
 }

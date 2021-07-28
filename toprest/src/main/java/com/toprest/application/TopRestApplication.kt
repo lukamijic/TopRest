@@ -1,6 +1,7 @@
 package com.toprest.application
 
 import android.app.Application
+import com.tempo.reply.di.reviewReplyModule
 import com.toprest.addrestaurant.di.addRestaurantModule
 import com.toprest.appconfig.TimberAppConfig
 import com.toprest.core.di.threadingModule
@@ -44,6 +45,7 @@ class TopRestApplication : Application() {
                     navigationModule(),
                     profileModule(),
                     restaurantLibModule(),
+                    reviewReplyModule(),
                     sessionLibModule(),
                     signUpModule(),
                     threadingModule()

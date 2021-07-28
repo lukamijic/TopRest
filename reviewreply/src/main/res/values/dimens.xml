@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="reviewreply_title_margin_horizontal">24dp</dimen>
+    <dimen name="reviewreply_title_margin_top">18dp</dimen>
+
+    <dimen name="reviewreply_reply_margin_horizontal">24dp</dimen>
+    <dimen name="reviewreply_reply_margin_vertical">12dp</dimen>
+
+    <dimen name="reviewreply_reply_button_margin_horizontal">24dp</dimen>
+</resources>

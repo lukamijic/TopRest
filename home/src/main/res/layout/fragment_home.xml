@@ -43,4 +43,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/add_rest"/>
 
+    <TextView
+        android:id="@+id/add_rep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Text.32"
+        android:textColor="@color/white"
+        android:padding="24dp"
+        android:background="@drawable/bg_sandy_brown_rounded"
+        android:text="Add Rep"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/add_rev"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

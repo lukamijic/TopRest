@@ -35,4 +35,8 @@ interface Router {
     fun showLeaveReview(restaurantId: String)
 
     fun closeLeaveReview()
+
+    fun showReviewReply(restaurantId: String, reviewId: String)
+
+    fun closeReviewReply()
 }
