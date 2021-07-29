@@ -1,15 +1,25 @@
 package com.toprest.firebaselib.client
 
 import com.google.android.gms.tasks.Task
-import io.reactivex.rxjava3.core.Completable
-import io.reactivex.rxjava3.core.Scheduler
-import io.reactivex.rxjava3.core.Single
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
+import io.reactivex.rxjava3.core.*
 
 abstract class FirebaseClient(
     private val backgroundScheduler: Scheduler
 ) {
 
-    fun <T, U> Task<T>.get(mapper: (T?) -> U) = Single.create<U> {emitter ->
+    fun <T> DatabaseReference.query(mapper: (DataSnapshot) -> T) = Flowable.create<T>(
+        { emitter ->
+            onValueChanged({ dataSnapshot -> emitter.onNext(mapper(dataSnapshot)) }) {
+                emitter.onError(it.toException())
+            }
+        }, BackpressureStrategy.BUFFER
+    )
+
+    fun <T, U> Task<T>.get(mapper: (T?) -> U) = Single.create<U> { emitter ->
         onCompleteListener {
             if (it.isSuccessful) {
                 emitter.onSuccess(mapper(it.result))
@@ -43,5 +53,17 @@ abstract class FirebaseClient(
         addOnCompleteListener {
             backgroundScheduler.scheduleDirect { action(it) }
         }
+    }
+
+    private fun DatabaseReference.onValueChanged(valueChangedAction: (DataSnapshot) -> Unit, onCancelled : (DatabaseError) -> Unit) {
+        addValueEventListener( object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                backgroundScheduler.scheduleDirect { valueChangedAction(snapshot) }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                backgroundScheduler.scheduleDirect { onCancelled(error) }
+            }
+        })
     }
 }

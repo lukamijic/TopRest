@@ -19,5 +19,7 @@ class ProfileFragment : BaseFragment<ProfileViewState, FragmentProfileBinding>(F
 
     override fun FragmentProfileBinding.initialiseView(savedInstanceState: Bundle?) {
         binding.logout.onClick { model.logout() }
+        binding.addRest.onClick { model.openAddRestaurant() }
+        binding.addRev.onClick { model.openLeaveReview() }
     }
 }

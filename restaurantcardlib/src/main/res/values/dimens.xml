@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="restaurantcardlib_padding_horizontal">24dp</dimen>
+    <dimen name="restaurantcardlib_padding_vertical">12dp</dimen>
+    <dimen name="restaurantcardlib_margin_vertical">8dp</dimen>
+    <dimen name="restaurantcardlib_title_margin_end">8dp</dimen>
+    <dimen name="restaurantcardlib_score_margin_end">8dp</dimen>
+    <dimen name="restaurantcardlib_description_margin_top">8dp</dimen>
+</resources>

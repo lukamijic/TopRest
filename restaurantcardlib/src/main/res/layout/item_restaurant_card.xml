@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_rounded"
+    android:layout_marginVertical="@dimen/restaurantcardlib_margin_vertical"
+    android:elevation="@dimen/elevation_8"
+    android:paddingHorizontal="@dimen/restaurantcardlib_padding_horizontal"
+    android:paddingVertical="@dimen/restaurantcardlib_padding_vertical">
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/RestaurantCardLibTitleTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/restaurantcardlib_title_margin_end"
+        android:ellipsize="end"
+        app:layout_constraintBottom_toBottomOf="@id/star"
+        app:layout_constraintEnd_toStartOf="@id/score"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/star"
+        tools:text="Domino's" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_star_filled"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/score"
+        style="@style/RestaurantCardLibScoreTextStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/restaurantcardlib_score_margin_end"
+        app:layout_constraintBottom_toBottomOf="@id/star"
+        app:layout_constraintEnd_toStartOf="@id/star"
+        app:layout_constraintTop_toTopOf="@id/star"
+        tools:text="4.5/5" />
+
+    <TextView
+        android:id="@+id/description"
+        style="@style/RestaurantCardLibDescriptionTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/restaurantcardlib_description_margin_top"
+        android:ellipsize="end"
+        android:maxLines="5"
+        android:minLines="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/star"
+        tools:text="@tools:sample/lorem/random" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import com.toprest.restaurantlib.source.RestaurantSource
 import com.toprest.restaurantlib.source.RestaurantSourceImpl
 import com.toprest.restaurantlib.usecase.CreateRestaurant
 import com.toprest.restaurantlib.usecase.LeaveReview
+import com.toprest.restaurantlib.usecase.QueryRestaurants
 import com.toprest.restaurantlib.usecase.ReplyToReview
 import org.koin.core.module.Module
 import org.koin.core.qualifier.named
@@ -28,4 +29,6 @@ fun restaurantLibModule() : Module = module {
     single { LeaveReview(get()) }
 
     single { ReplyToReview(get()) }
+
+    single { QueryRestaurants(get()) }
 }

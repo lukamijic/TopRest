@@ -8,6 +8,7 @@ import com.toprest.activity.main.MainActivity
 import com.toprest.activity.start.StartActivity
 import com.toprest.addrestaurant.ui.AddRestaurantFragment
 import com.toprest.dashboard.ui.DashboardFragment
+import com.toprest.home.ui.customer.CustomerHomeFragment
 import com.toprest.landing.ui.LandingFragment
 import com.toprest.leavereview.ui.LeaveReviewFragment
 import com.toprest.login.ui.LoginActivity
@@ -23,6 +24,7 @@ private const val LAST_FRAGMENT = 0
 private const val START_CONTAINER = R.id.start_container
 private const val SIGN_UP_CONTAINER = R.id.signup_container
 private const val MAIN_CONTAINER = R.id.main_container
+private const val HOME_CONTAINER = R.id.home_container
 
 class RouterImpl(
     private val activity: AppCompatActivity,
@@ -133,5 +135,11 @@ class RouterImpl(
 
     override fun closeReviewReply() {
         markForClosing(ReviewReplyFragment.TAG)
+    }
+
+    override fun showCustomerHome() {
+        fragmentManager.inTransaction {
+            replace(HOME_CONTAINER, CustomerHomeFragment.newInstance(), CustomerHomeFragment.TAG)
+        }
     }
 }

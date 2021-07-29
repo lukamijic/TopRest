@@ -8,9 +8,6 @@ dependencies {
     implementation project(":coreui")
     implementation project(":commonui")
     implementation project(":navigation")
-    implementation project(":restaurantcardlib")
-    implementation project(":restaurantlib")
-    implementation project(":sessionlib")
 
     implementation AndroidX.constraintLayout
     implementation UI.materialComponents
