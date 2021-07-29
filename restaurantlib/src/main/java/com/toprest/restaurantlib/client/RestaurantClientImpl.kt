@@ -1,11 +1,15 @@
 package com.toprest.restaurantlib.client
 
+import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.getValue
 import com.toprest.firebaselib.client.FirebaseClient
 import com.toprest.restaurantlib.model.api.ApiReply
 import com.toprest.restaurantlib.model.api.ApiRestaurant
 import com.toprest.restaurantlib.model.api.ApiReview
+import com.toprest.restaurantlib.model.response.RestaurantResponse
 import io.reactivex.rxjava3.core.Completable
+import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.core.Single
 
@@ -52,4 +56,17 @@ class RestaurantClientImpl(
             .child(REPLY_NODE)
             .setValue(ApiReply(reply, System.currentTimeMillis()))
             .execute()
+
+    override fun getRestaurants(): Flowable<List<RestaurantResponse>> =
+        database
+            .child(RESTAURANTS_NODE)
+            .query { dataSnapshot ->
+                dataSnapshot.children.map { restaurantSnapshot ->
+                    RestaurantResponse(
+                        restaurantSnapshot.getValue<ApiRestaurant>()!!,
+                        restaurantSnapshot.child(REVIEWS_NODE).children.map { it.getValue<ApiReview>()!! }
+                    )
+                }
+            }
+
 }

@@ -18,8 +18,6 @@ class HomeFragment : BaseFragment<HomeViewState, FragmentHomeBinding>(FragmentHo
     override val model : HomeViewModel by viewModel()
 
     override fun FragmentHomeBinding.initialiseView(savedInstanceState: Bundle?) {
-        addRest.setOnClickListener { model.openAddRestaurant() }
-        addRev.setOnClickListener { model.openLeaveReview() }
-        addRep.onClick { model.openReplyReview() }
+
     }
 }

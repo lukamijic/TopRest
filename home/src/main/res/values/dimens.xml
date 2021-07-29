@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="home_margin_horizontal">24dp</dimen>
+    <dimen name="home_margin_top">24dp</dimen>
+
+    <dimen name="customerhome_restaurants_margin_top">12dp</dimen>
+</resources>

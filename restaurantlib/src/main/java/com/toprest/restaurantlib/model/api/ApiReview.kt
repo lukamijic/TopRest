@@ -9,5 +9,6 @@ data class ApiReview(
     val review: String? = null,
     val score: Int? = null,
     val dateOfVisit: String? = null,
-    val creationTimestamp: Long? = null
+    val creationTimestamp: Long? = null,
+    val reply: ApiReply? = null
 )
