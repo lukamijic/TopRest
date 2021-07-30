@@ -25,6 +25,7 @@ dependencies {
     implementation project(":login")
     implementation project(":navigation")
     implementation project(":profile")
+    implementation project(":restaurantdetails")
     implementation project(":restaurantlib")
     implementation project(":reviewreply")
     implementation project(":sessionlib")

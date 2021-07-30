@@ -41,4 +41,6 @@ interface Router {
     fun closeReviewReply()
 
     fun showCustomerHome()
+
+    fun showRestaurantDetails(restaurantId: String)
 }

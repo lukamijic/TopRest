@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="review_card_padding_vertical">12dp</dimen>
+    <dimen name="review_card_padding_horizontal">24dp</dimen>
+
+    <dimen name="review_card_margin_top">12dp</dimen>
+    <dimen name="review_card_date_margin_end">8dp</dimen>
+    <dimen name="review_card_score_margin_end">8dp</dimen>
+    <dimen name="review_card_review_margin_top">8dp</dimen>
+    <dimen name="review_card_reply_button_margin_top">12dp</dimen>
+
+    <dimen name="reply_card_margin_bottom">12dp</dimen>
+    <dimen name="reply_card_padding_vertical">12dp</dimen>
+    <dimen name="reply_card_padding_horizontal">24dp</dimen>
+    <dimen name="reply_card_margin_top">12dp</dimen>
+    <dimen name="reply_card_reply_margin_top">8dp</dimen>
+</resources>

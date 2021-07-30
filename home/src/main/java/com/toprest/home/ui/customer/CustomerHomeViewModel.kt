@@ -26,9 +26,7 @@ class CustomerHomeViewModel(
         )
     }
 
-    fun openRestaurantDetails(restaurantId: String) {
-
-    }
+    fun openRestaurantDetails(restaurantId: String) = dispatchRoutingAction { it.showRestaurantDetails(restaurantId) }
 
     private fun toRestaurantOverview(restaurant: Restaurant): RestaurantOverview {
         return RestaurantOverview(

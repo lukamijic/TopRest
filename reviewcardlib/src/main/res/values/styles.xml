@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ReviewCardLibScoreTextStyle" parent="Text.16">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="ReviewCardLibDateTextStyle" parent="Text.16"/>
+
+    <style name="ReviewCardLibReviewTextStyle" parent="Text.14"/>
+
+    <style name="ReplyCardReplyByOwnerTextStyle" parent="Text.14">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="ReplyCardReplyTextStyle" parent="Text.14"/>
+</resources>

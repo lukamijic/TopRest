@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:fillViewport="true"
+    android:background="@color/toprest_background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
+
+        <TextView
+            android:id="@+id/name"
+            style="@style/RestaurantDetailsNameTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/restaurantdetails_name_margin_horizontal"
+            android:layout_marginTop="@dimen/restaurantdetails_name_margin_top"
+            app:layout_constraintEnd_toStartOf="@id/score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Domino's" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/restaurantdetails_star_margin_top"
+            android:layout_marginEnd="@dimen/restaurantdetails_star_margin_end"
+            android:src="@drawable/ic_star_filled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/score"
+            style="@style/RestaurantDetailsScoreTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/restaurantdetails_score_margin_end"
+            app:layout_constraintBottom_toBottomOf="@id/star"
+            app:layout_constraintEnd_toStartOf="@id/star"
+            app:layout_constraintTop_toTopOf="@id/star"
+            tools:text="4.5/5" />
+
+        <TextView
+            android:id="@+id/description"
+            style="@style/RestaurantDetailsDescriptionTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/restaurantdetails_description_margin_horizontal"
+            android:layout_marginTop="@dimen/restaurantdetails_description_margin_top"
+            android:ellipsize="end"
+            android:maxLines="7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            tools:text="@tools:sample/lorem/random" />
+
+        <com.toprest.commonui.view.AccentButton
+            android:id="@+id/review_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginHorizontal="@dimen/restaurantdetails_review_button_margin_horizontal"
+            android:layout_marginTop="@dimen/restaurantdetails_review_button_margin_top"
+            android:text="@string/restaurantdetails_review"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviews"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/restaurantdetails_recycler_view_margin_horizontal"
+            android:layout_marginTop="@dimen/restaurantdetails_recycler_view_margin_top"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/review_button"
+            android:clipChildren="false"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_review_card" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

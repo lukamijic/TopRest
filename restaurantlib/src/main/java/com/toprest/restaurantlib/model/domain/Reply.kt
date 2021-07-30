@@ -8,4 +8,6 @@ data class Reply(
     companion object {
         val EMPTY = Reply("", -1)
     }
+
+    fun isEmpty() = this === EMPTY
 }

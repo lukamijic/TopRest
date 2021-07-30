@@ -15,5 +15,5 @@ interface RestaurantClient {
 
     fun replyToReview(restaurantId: String, reviewId: String, reply: String): Completable
 
-    fun getRestaurants() : Flowable<List<RestaurantResponse>>
+    fun queryRestaurants() : Flowable<List<RestaurantResponse>>
 }

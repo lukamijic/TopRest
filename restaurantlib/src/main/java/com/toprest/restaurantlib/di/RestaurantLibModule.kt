@@ -5,10 +5,7 @@ import com.toprest.restaurantlib.client.RestaurantClient
 import com.toprest.restaurantlib.client.RestaurantClientImpl
 import com.toprest.restaurantlib.source.RestaurantSource
 import com.toprest.restaurantlib.source.RestaurantSourceImpl
-import com.toprest.restaurantlib.usecase.CreateRestaurant
-import com.toprest.restaurantlib.usecase.LeaveReview
-import com.toprest.restaurantlib.usecase.QueryRestaurants
-import com.toprest.restaurantlib.usecase.ReplyToReview
+import com.toprest.restaurantlib.usecase.*
 import org.koin.core.module.Module
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -31,4 +28,6 @@ fun restaurantLibModule() : Module = module {
     single { ReplyToReview(get()) }
 
     single { QueryRestaurants(get()) }
+
+    single { QueryRestaurant(get()) }
 }

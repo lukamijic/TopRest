@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reviewcardlib_reply">Reply</string>
+
+    <string name="replycard_review_by_owner">Reply by owner:</string>
+</resources>
