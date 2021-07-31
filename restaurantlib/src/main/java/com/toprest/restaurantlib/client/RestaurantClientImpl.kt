@@ -57,7 +57,7 @@ class RestaurantClientImpl(
             .setValue(ApiReply(reply, System.currentTimeMillis()))
             .execute()
 
-    override fun getRestaurants(): Flowable<List<RestaurantResponse>> =
+    override fun queryRestaurants(): Flowable<List<RestaurantResponse>> =
         database
             .child(RESTAURANTS_NODE)
             .query { dataSnapshot ->

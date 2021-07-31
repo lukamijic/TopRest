@@ -13,6 +13,7 @@ import com.toprest.landing.ui.LandingFragment
 import com.toprest.leavereview.ui.LeaveReviewFragment
 import com.toprest.login.ui.LoginActivity
 import com.toprest.navigation.ext.*
+import com.toprest.restaurantdetails.ui.RestaurantDetailsFragment
 import com.toprest.ui.usertype.UserTypeSelectionFragment
 import com.toprest.ui.registeremail.RegisterEmailFragment
 import com.toprest.ui.registername.RegisterNameFragment
@@ -140,6 +141,13 @@ class RouterImpl(
     override fun showCustomerHome() {
         fragmentManager.inTransaction {
             replace(HOME_CONTAINER, CustomerHomeFragment.newInstance(), CustomerHomeFragment.TAG)
+        }
+    }
+
+    override fun showRestaurantDetails(restaurantId: String) {
+        fragmentManager.inTransactionAndAddToBackStack(RestaurantDetailsFragment.TAG) {
+            applyFadeInEnterAndFadeOutExitAnimation()
+            add(MAIN_CONTAINER, RestaurantDetailsFragment.newInstance(restaurantId), RestaurantDetailsFragment.TAG)
         }
     }
 }

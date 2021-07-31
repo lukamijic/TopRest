@@ -16,6 +16,7 @@ import com.toprest.navigation.navigationModule
 import com.toprest.profile.di.profileModule
 import com.toprest.restaurantlib.di.restaurantLibModule
 import com.toprest.leavereview.di.leaveReviewModule
+import com.toprest.restaurantdetails.di.restaurantDetailsModule
 import com.toprest.sessionlib.di.sessionLibModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
@@ -44,6 +45,7 @@ class TopRestApplication : Application() {
                     loginModule(),
                     navigationModule(),
                     profileModule(),
+                    restaurantDetailsModule(),
                     restaurantLibModule(),
                     reviewReplyModule(),
                     sessionLibModule(),

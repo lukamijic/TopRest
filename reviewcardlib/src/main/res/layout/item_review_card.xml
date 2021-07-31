@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/review_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/review_card_margin_top"
+        android:background="@drawable/bg_rounded"
+        android:elevation="@dimen/elevation_8"
+        android:paddingHorizontal="@dimen/review_card_padding_horizontal"
+        android:paddingVertical="@dimen/review_card_padding_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/date"
+            style="@style/ReviewCardLibDateTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/review_card_date_margin_end"
+            app:layout_constraintEnd_toStartOf="@id/score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="25/07/2021" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star_filled"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/score"
+            style="@style/ReviewCardLibScoreTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/review_card_score_margin_end"
+            app:layout_constraintBottom_toBottomOf="@id/star"
+            app:layout_constraintEnd_toStartOf="@id/star"
+            app:layout_constraintTop_toTopOf="@id/star"
+            tools:text="4.5/5" />
+
+        <TextView
+            android:id="@+id/review"
+            style="@style/ReviewCardLibReviewTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/review_card_review_margin_top"
+            android:ellipsize="end"
+            android:maxLines="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/star"
+            tools:text="@tools:sample/lorem/random" />
+
+        <com.toprest.commonui.view.AccentButton
+            android:id="@+id/reply_button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/review_card_reply_button_margin_top"
+            android:text="@string/reviewcardlib_reply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/review" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reply_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/reply_card_margin_top"
+        android:layout_marginBottom="@dimen/reply_card_margin_bottom"
+        android:background="@drawable/bg_rounded"
+        android:elevation="@dimen/elevation_8"
+        android:paddingHorizontal="@dimen/reply_card_padding_horizontal"
+        android:paddingVertical="@dimen/reply_card_padding_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/review_container"
+        app:layout_constraintWidth_percent="0.80">
+
+        <TextView
+            android:id="@+id/reply_by_owner"
+            style="@style/ReplyCardReplyByOwnerTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/replycard_review_by_owner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/reply"
+            style="@style/ReplyCardReplyTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/reply_card_reply_margin_top"
+            android:ellipsize="end"
+            android:maxLines="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reply_by_owner"
+            tools:text="@tools:sample/lorem/random" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

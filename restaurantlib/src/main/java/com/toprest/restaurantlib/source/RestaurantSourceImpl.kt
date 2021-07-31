@@ -2,7 +2,6 @@ package com.toprest.restaurantlib.source
 
 import com.toprest.core.extension.shareReplayLatest
 import com.toprest.restaurantlib.client.RestaurantClient
-import com.toprest.restaurantlib.model.api.ApiRestaurant
 import com.toprest.restaurantlib.model.domain.Restaurant
 import com.toprest.restaurantlib.model.response.RestaurantResponse
 import io.reactivex.rxjava3.core.Completable
@@ -12,7 +11,7 @@ class RestaurantSourceImpl(
     private val client: RestaurantClient
 ) : RestaurantSource {
 
-    private val restaurants = client.getRestaurants()
+    private val restaurants = client.queryRestaurants()
         .map { it.map(RestaurantResponse::toRestaurant) }
         .shareReplayLatest()
 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RestaurantDetailsNameTextStyle" parent="Text.20">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="RestaurantDetailsScoreTextStyle" parent="Text.20">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="RestaurantDetailsDescriptionTextStyle" parent="Text.16"/>
+</resources>
