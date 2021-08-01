@@ -18,28 +18,28 @@ class SessionSourceImpl(
 
     private val refreshSignedIn = PublishProcessor.create<Any>()
 
-    private val isSignedIn = Flowable.fromCallable { firebaseAuth.currentUser?.let { true } ?: false }
+    private val isSignedIn = Single.fromCallable { firebaseAuth.currentUser?.let { true } ?: false }
         .repeatWhen { refreshSignedIn }
-        .shareReplayLatest()
-
-    private val user = client.getUser()
-        .map(ApiUser::toUser)
-        .repeatWhen { isSignedIn }
         .shareReplayLatest()
 
     override fun isSignedIn(): Flowable<Boolean> = isSignedIn
 
-    override fun user(): Flowable<User> = user
+    override fun user(): Flowable<User> = client.getUser()
+        .map(ApiUser::toUser)
+        .repeatWhen { isSignedIn }
+        .shareReplayLatest()
 
     override fun login(email: String, password: String): Completable =
         client.login(email, password)
-            .doOnComplete { refreshSignedIn.onNext(REFRESH_SIGNED_IN) }
+            .andThen(refreshSignedIn())
 
     override fun logOut(): Completable = client.logout()
-        .doOnComplete { refreshSignedIn.onNext(REFRESH_SIGNED_IN) }
+        .andThen(refreshSignedIn())
 
     override fun createUser(firstName: String, lastName: String, userType: UserType, email: String, password: String): Completable =
         client.createUser(email, password)
             .flatMapCompletable { (client.storeUserData(it, firstName, lastName, email, userType)) }
-            .doOnComplete { refreshSignedIn.onNext(REFRESH_SIGNED_IN) }
+            .andThen(refreshSignedIn())
+
+    private fun refreshSignedIn() = Completable.fromAction { refreshSignedIn.onNext(REFRESH_SIGNED_IN) }
 }

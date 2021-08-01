@@ -69,6 +69,7 @@ class RestaurantDetailsViewModel(
         restaurant.reviews.map {
             ReviewItem(
                 it.id,
+                restaurantId,
                 it.score,
                 it.dateOfVisit,
                 it.review,

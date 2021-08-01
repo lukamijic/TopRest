@@ -3,6 +3,7 @@ package com.toprest.application
 import android.app.Application
 import com.tempo.reply.di.reviewReplyModule
 import com.toprest.addrestaurant.di.addRestaurantModule
+import com.toprest.appconfig.StethoAppConfig
 import com.toprest.appconfig.TimberAppConfig
 import com.toprest.core.di.threadingModule
 import com.toprest.dashboard.di.dashboardModule
@@ -28,6 +29,7 @@ class TopRestApplication : Application() {
         initKoin()
 
         TimberAppConfig().configure()
+        StethoAppConfig(this).configure()
     }
 
     private fun initKoin() {

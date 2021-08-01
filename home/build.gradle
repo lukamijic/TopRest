@@ -9,6 +9,7 @@ dependencies {
     implementation project(":commonui")
     implementation project(":navigation")
     implementation project(":restaurantcardlib")
+    implementation project(":reviewcardlib")
     implementation project(":restaurantlib")
     implementation project(":sessionlib")
 

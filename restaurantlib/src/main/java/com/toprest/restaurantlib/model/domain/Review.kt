@@ -2,6 +2,7 @@ package com.toprest.restaurantlib.model.domain
 
 data class Review(
     val id: String,
+    val restaurantId: String,
     val reviewerId: String,
     val review: String,
     val score: Int,

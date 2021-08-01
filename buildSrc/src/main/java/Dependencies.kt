@@ -76,3 +76,9 @@ object Lottie {
 
     val lottie = "com.airbnb.android:lottie:$lottie_version"
 }
+
+object Stetho {
+    private val stetho_version = "1.5.1"
+
+    val stetho = "com.facebook.stetho:stetho:$stetho_version"
+}

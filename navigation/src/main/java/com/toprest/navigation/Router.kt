@@ -42,5 +42,7 @@ interface Router {
 
     fun showCustomerHome()
 
+    fun showOwnerHome()
+
     fun showRestaurantDetails(restaurantId: String)
 }
