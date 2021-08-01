@@ -34,6 +34,7 @@
     <color name="toprest_background">@color/white</color>
 
     <color name="icon_back_color">@color/ebony_clay</color>
+    <color name="icon_default_color">@color/ebony_clay</color>
     <color name="icon_arrow_right_enabled">@color/ebony_clay</color>
     <color name="icon_arrow_right_disabled">@color/ebony_clay_60</color>
 

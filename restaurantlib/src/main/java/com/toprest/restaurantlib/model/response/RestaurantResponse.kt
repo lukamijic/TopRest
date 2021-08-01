@@ -19,6 +19,7 @@ data class RestaurantResponse(
         apiReviews.map { apiReview ->
             Review(
                 apiReview.id!!,
+                apiReview.restaurantId!!,
                 apiReview.reviewerId!!,
                 apiReview.review!!,
                 apiReview.score!!,

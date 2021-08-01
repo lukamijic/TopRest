@@ -9,6 +9,7 @@
     <color name="toprest_background">@color/ebony_clay</color>
 
     <color name="icon_back_color">@color/pale_sky</color>
+    <color name="icon_default_color">@color/pale_sky</color>
     <color name="icon_arrow_right_enabled">@color/pale_sky</color>
     <color name="icon_arrow_right_disabled">@color/pale_sky_60</color>
 

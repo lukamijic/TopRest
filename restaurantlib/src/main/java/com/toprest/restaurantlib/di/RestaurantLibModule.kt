@@ -30,4 +30,8 @@ fun restaurantLibModule() : Module = module {
     single { QueryRestaurants(get()) }
 
     single { QueryRestaurant(get()) }
+
+    single { QueryRestaurantsByOwner(get()) }
+
+    single { QueryOwnerPendingReviews(get()) }
 }

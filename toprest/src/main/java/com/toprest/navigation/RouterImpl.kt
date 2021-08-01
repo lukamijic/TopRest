@@ -9,6 +9,7 @@ import com.toprest.activity.start.StartActivity
 import com.toprest.addrestaurant.ui.AddRestaurantFragment
 import com.toprest.dashboard.ui.DashboardFragment
 import com.toprest.home.ui.customer.CustomerHomeFragment
+import com.toprest.home.ui.owner.OwnerHomeFragment
 import com.toprest.landing.ui.LandingFragment
 import com.toprest.leavereview.ui.LeaveReviewFragment
 import com.toprest.login.ui.LoginActivity
@@ -141,6 +142,12 @@ class RouterImpl(
     override fun showCustomerHome() {
         fragmentManager.inTransaction {
             replace(HOME_CONTAINER, CustomerHomeFragment.newInstance(), CustomerHomeFragment.TAG)
+        }
+    }
+
+    override fun showOwnerHome() {
+        fragmentManager.inTransaction {
+            replace(HOME_CONTAINER, OwnerHomeFragment.newInstance(), OwnerHomeFragment.TAG)
         }
     }
 

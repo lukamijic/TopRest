@@ -18,6 +18,6 @@ class HomeFragment : BaseFragment<HomeViewState, FragmentHomeBinding>(FragmentHo
     override val model : HomeViewModel by viewModel()
 
     override fun FragmentHomeBinding.initialiseView(savedInstanceState: Bundle?) {
-
+        model.showUserBasedHomeScreen()
     }
 }

@@ -43,6 +43,7 @@ class ReviewAdapter(
             if (item.reply == null) {
                 replyContainer.hide()
             } else {
+                replyContainer.show()
                 reply.text = item.reply.reply
             }
         }

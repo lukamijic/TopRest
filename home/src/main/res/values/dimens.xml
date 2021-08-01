@@ -4,4 +4,6 @@
     <dimen name="home_margin_top">24dp</dimen>
 
     <dimen name="customerhome_restaurants_margin_top">12dp</dimen>
+    <dimen name="ownerhome_screen_type_margin_top">12dp</dimen>
+    <dimen name="ownerhome_screen_type_margin_end">12dp</dimen>
 </resources>

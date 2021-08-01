@@ -4,6 +4,7 @@ import com.toprest.coreui.utils.DiffUtilViewModel
 
 data class ReviewItem(
     override val id: String,
+    val restaurantId: String,
     val score: Int,
     val date: String,
     val review: String,

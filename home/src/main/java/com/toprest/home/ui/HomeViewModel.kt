@@ -13,25 +13,23 @@ class HomeViewModel(
     mainThreadScheduler: Scheduler,
     backgroundScheduler: Scheduler,
     routingActionsDispatcher: RoutingActionsDispatcher,
-    queryUser: QueryUser
+    private val queryUser: QueryUser
 ) : BaseViewModel<HomeViewState>(
     mainThreadScheduler,
     backgroundScheduler,
     routingActionsDispatcher
 ) {
 
-    init {
-        runCommand(
-            queryUser()
-                .map(User::userType)
-                .distinctUntilChanged()
-                .toCompletable { userType : UserType ->
-                    when (userType) {
-                        UserType.CUSTOMER -> dispatchRoutingAction(Router::showCustomerHome)
-                        UserType.OWNER -> dispatchRoutingAction(Router::showCustomerHome)
-                        UserType.ADMIN -> dispatchRoutingAction(Router::showCustomerHome)
-                    }
+    fun showUserBasedHomeScreen() = runCommand(
+        queryUser()
+            .map(User::userType)
+            .firstOrError()
+            .toCompletable { userType : UserType ->
+                when (userType) {
+                    UserType.CUSTOMER -> dispatchRoutingAction(Router::showCustomerHome)
+                    UserType.OWNER -> dispatchRoutingAction(Router::showOwnerHome)
+                    UserType.ADMIN -> dispatchRoutingAction(Router::showCustomerHome)
                 }
-        )
-    }
+            }
+    )
 }

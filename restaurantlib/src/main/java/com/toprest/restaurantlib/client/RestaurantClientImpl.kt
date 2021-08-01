@@ -43,7 +43,7 @@ class RestaurantClientImpl(
         val newReviewNode = database.child(RESTAURANTS_NODE).child(restaurantId).child(REVIEWS_NODE).push()
         val reviewId = newReviewNode.key
 
-        return newReviewNode.setValue(ApiReview(reviewId, reviewerId, review, score, dateOfVisit, System.currentTimeMillis()))
+        return newReviewNode.setValue(ApiReview(reviewId, restaurantId, reviewerId, review, score, dateOfVisit, System.currentTimeMillis()))
             .execute()
     }
 
