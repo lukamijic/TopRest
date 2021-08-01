@@ -9,6 +9,7 @@ import com.toprest.activity.start.StartActivity
 import com.toprest.addrestaurant.ui.AddRestaurantFragment
 import com.toprest.dashboard.ui.DashboardFragment
 import com.toprest.home.ui.customer.CustomerHomeFragment
+import com.toprest.home.ui.filter.FilterFragment
 import com.toprest.home.ui.owner.OwnerHomeFragment
 import com.toprest.landing.ui.LandingFragment
 import com.toprest.leavereview.ui.LeaveReviewFragment
@@ -156,5 +157,15 @@ class RouterImpl(
             applyFadeInEnterAndFadeOutExitAnimation()
             add(MAIN_CONTAINER, RestaurantDetailsFragment.newInstance(restaurantId), RestaurantDetailsFragment.TAG)
         }
+    }
+
+    override fun showFilterHome() {
+        fragmentManager.inTransactionAndAddToBackStack(FilterFragment.TAG) {
+            add(MAIN_CONTAINER, FilterFragment.newInstance(), FilterFragment.TAG)
+        }
+    }
+
+    override fun closeFilterHome() {
+        markForClosing(FilterFragment.TAG)
     }
 }

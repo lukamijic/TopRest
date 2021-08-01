@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/filter_pulley_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0"
+        android:background="@color/filterhome_background"
+        tools:alpha="0.4" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/filter_pulley"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:background="@drawable/bg_rounded_bottom">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/HomeTitleTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/filter_home_title_margin_horizontal"
+            android:layout_marginTop="@dimen/filter_home_title_margin_top"
+            android:text="@string/filterhome_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/minimum_score"
+            style="@style/FilterHomeMinimumScoreTextStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/filter_home_minimum_score_title_margin_horizontal"
+            android:layout_marginTop="@dimen/filter_home_minimum_score_margin_top"
+            android:text="@string/filterhome_minimum_score"
+            app:layout_constraintEnd_toStartOf="@id/clear_filter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/clear_filter"
+            style="@style/FilterHomeClearFilterTextStyle"
+            android:text="@string/filterhome_clear"
+            android:padding="@dimen/filter_home_clear_padding"
+            android:layout_marginEnd="@dimen/filter_home_clear_margin_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/minimum_score"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/minimum_score"
+            app:layout_constraintTop_toTopOf="@id/minimum_score" />
+
+        <LinearLayout
+            android:id="@+id/stars_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/filter_home_stars_margin_horizontal"
+            android:layout_marginVertical="@dimen/filter_home_stars_margin_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/minimum_score">
+
+            <ImageView
+                android:id="@+id/star1"
+                style="@style/IconButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:id="@+id/star2"
+                style="@style/IconButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:id="@+id/star3"
+                style="@style/IconButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:id="@+id/star4"
+                style="@style/IconButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_star" />
+
+            <ImageView
+                android:id="@+id/star5"
+                style="@style/IconButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_star" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

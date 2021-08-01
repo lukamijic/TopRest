@@ -7,6 +7,7 @@ import com.toprest.coreui.BaseFragment
 import com.toprest.coreui.utils.fade
 import com.toprest.coreui.utils.fadeOut
 import com.toprest.coreui.utils.onClick
+import com.toprest.coreui.utils.onThrottledClick
 import com.toprest.home.R
 import com.toprest.home.databinding.FragmentOwnerHomeBinding
 import com.toprest.reviewcardlib.adapter.ReviewAdapter
@@ -31,6 +32,7 @@ class OwnerHomeFragment : BaseFragment<OwnerHomeViewState, FragmentOwnerHomeBind
         reviews.adapter = reviewAdapter
 
         screenType.onClick { model.changeScreenType() }
+        addRestaurant.onThrottledClick { model.showAddRestaurant() }
     }
 
     override fun render(viewState: OwnerHomeViewState) = when(viewState) {
@@ -56,6 +58,7 @@ class OwnerHomeFragment : BaseFragment<OwnerHomeViewState, FragmentOwnerHomeBind
 
     private fun FragmentOwnerHomeBinding.renderScreenType(viewState: OwnerHomeViewState.ScreenType) {
         restaurants.fade(viewState.screenType == OwnerHomeScreenType.RESTAURANTS)
+        addRestaurant.fade(viewState.screenType == OwnerHomeScreenType.RESTAURANTS)
         reviews.fade(viewState.screenType == OwnerHomeScreenType.REVIEWS)
 
         if (viewState.screenType == OwnerHomeScreenType.RESTAURANTS) {

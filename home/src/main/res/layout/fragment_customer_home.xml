@@ -18,14 +18,35 @@
             android:clipChildren="false"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/title"
-                style="@style/HomeTitleTextStyle"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/home_margin_horizontal"
-                android:layout_marginTop="@dimen/home_margin_top"
-                android:text="@string/customerhome_title" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/HomeTitleTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/home_margin_horizontal"
+                    android:layout_marginTop="@dimen/home_margin_top"
+                    android:text="@string/customerhome_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/filter_button"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <TextView
+                    android:id="@+id/filter_button"
+                    style="@style/CustomerHomeFilterTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/filter_home_clear_margin_end"
+                    android:padding="@dimen/customerhome_filter_padding"
+                    android:text="@string/customerhome_filter"
+                    app:layout_constraintStart_toEndOf="@id/title"
+                    app:layout_constraintTop_toTopOf="@id/title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@id/title"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/restaurants"

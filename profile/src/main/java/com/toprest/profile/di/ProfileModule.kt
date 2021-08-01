@@ -15,6 +15,7 @@ fun profileModule() : Module = module {
             mainThreadScheduler = get(named(MAIN_SCHEDULER)),
             backgroundScheduler = get(named(BACKGROUND_SCHEDULER)),
             routingActionsDispatcher = get(),
+            queryUser = get(),
             logout = get()
         )
     }

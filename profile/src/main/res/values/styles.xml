@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ProfileTitleTextStyle" parent="Text.20">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="ProfileDetailsTextStyle" parent="Text.16"/>
+    <style name="ProfileDetailsTextValueStyle" parent="Text.16">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+</resources>

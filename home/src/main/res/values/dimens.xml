@@ -4,6 +4,20 @@
     <dimen name="home_margin_top">24dp</dimen>
 
     <dimen name="customerhome_restaurants_margin_top">12dp</dimen>
+    <dimen name="customerhome_filter_padding">12dp</dimen>
+    <dimen name="customerhome_filter_margin_end">12dp</dimen>
+    <dimen name="customerhome_filter_margin_top">12dp</dimen>
     <dimen name="ownerhome_screen_type_margin_top">12dp</dimen>
     <dimen name="ownerhome_screen_type_margin_end">12dp</dimen>
+    <dimen name="ownerhome_add_restaurant_margin_horizontal">24dp</dimen>
+    <dimen name="ownerhome_add_restaurant_margin_top">12dp</dimen>
+
+    <dimen name="filter_home_title_margin_top">36dp</dimen>
+    <dimen name="filter_home_title_margin_horizontal">24dp</dimen>
+    <dimen name="filter_home_minimum_score_margin_top">12dp</dimen>
+    <dimen name="filter_home_minimum_score_title_margin_horizontal">24dp</dimen>
+    <dimen name="filter_home_clear_padding">12dp</dimen>
+    <dimen name="filter_home_clear_margin_end">12dp</dimen>
+    <dimen name="filter_home_stars_margin_horizontal">24dp</dimen>
+    <dimen name="filter_home_stars_margin_vertical">24dp</dimen>
 </resources>

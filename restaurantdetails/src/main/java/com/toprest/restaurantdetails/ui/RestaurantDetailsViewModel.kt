@@ -12,6 +12,10 @@ import com.toprest.sessionlib.usecase.QueryUser
 import io.reactivex.rxjava3.core.Flowable.*
 import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.functions.BiFunction
+import java.text.SimpleDateFormat
+import java.util.*
+
+private val dateFormat by lazy { SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()) }
 
 class RestaurantDetailsViewModel(
     mainThreadScheduler: Scheduler,
@@ -66,16 +70,26 @@ class RestaurantDetailsViewModel(
         }
 
     private fun toReviewsViewState(user: User, restaurant: Restaurant) = RestaurantDetailsViewState.Reviews(
-        restaurant.reviews.map {
-            ReviewItem(
-                it.id,
-                restaurantId,
-                it.score,
-                it.dateOfVisit,
-                it.review,
-                user.id == restaurant.ownerId && it.reply.isEmpty(),
-                if (it.reply.isEmpty()) null else ReplyItem(it.reply.reply)
-            )
+        restaurant.reviews.sortedByDescending { it.score }.let {
+            if (it.size < 3) {
+                it
+            } else {
+                val mutableReviews = it.toMutableList()
+                val bestRated = mutableReviews.removeFirst()
+                val worstRated = mutableReviews.removeLast()
+                listOf(bestRated, worstRated) + mutableReviews.sortedByDescending { review -> dateFormat.parse(review.dateOfVisit)!!.time }
+            }
         }
+            .map {
+                ReviewItem(
+                    it.id,
+                    restaurantId,
+                    it.score,
+                    it.dateOfVisit,
+                    it.review,
+                    user.id == restaurant.ownerId && it.reply.isEmpty(),
+                    if (it.reply.isEmpty()) null else ReplyItem(it.reply.reply)
+                )
+            }
     )
 }

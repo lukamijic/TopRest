@@ -4,6 +4,7 @@ import com.top.restaurantcardlib.model.RestaurantOverview
 import com.toprest.core.extension.toCompletable
 import com.toprest.coreui.BaseViewModel
 import com.toprest.home.ui.owner.translations.OwnerHomeTranslations
+import com.toprest.navigation.Router
 import com.toprest.navigation.RoutingActionsDispatcher
 import com.toprest.restaurantlib.model.domain.Review
 import com.toprest.restaurantlib.usecase.QueryOwnerPendingReviews
@@ -87,6 +88,8 @@ class OwnerHomeViewModel(
             .firstOrError()
             .toCompletable { restaurantId -> dispatchRoutingAction { it.showReviewReply(restaurantId, reviewId) } }
     )
+
+    fun showAddRestaurant() = dispatchRoutingAction(Router::showAddRestaurant)
 
     fun changeScreenType() = runCommand(
         screenType

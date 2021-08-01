@@ -45,4 +45,8 @@ interface Router {
     fun showOwnerHome()
 
     fun showRestaurantDetails(restaurantId: String)
+
+    fun showFilterHome()
+
+    fun closeFilterHome()
 }

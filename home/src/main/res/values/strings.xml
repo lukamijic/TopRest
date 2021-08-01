@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="customerhome_title">Check out these Restaurants</string>
+    <string name="customerhome_filter">Filter</string>
 
     <string name="ownerhome_restaurant_title">My Restaurants</string>
     <string name="ownerhome_reviews_title">Pending Reviews</string>
+
+    <string name="filterhome_title">Filter</string>
+    <string name="filterhome_minimum_score">Minimum Score:</string>
+    <string name="filterhome_clear">Clear Filter</string>
 </resources>

@@ -4,6 +4,9 @@ import com.toprest.core.di.BACKGROUND_SCHEDULER
 import com.toprest.core.di.MAIN_SCHEDULER
 import com.toprest.home.ui.HomeViewModel
 import com.toprest.home.ui.customer.CustomerHomeViewModel
+import com.toprest.home.ui.filter.FilterViewModel
+import com.toprest.home.ui.filter.controller.FilterController
+import com.toprest.home.ui.filter.controller.FilterControllerImpl
 import com.toprest.home.ui.owner.OwnerHomeViewModel
 import com.toprest.home.ui.owner.translations.OwnerHomeTranslations
 import com.toprest.home.ui.owner.translations.OwnerHomeTranslationsImpl
@@ -29,7 +32,8 @@ fun homeModule() : Module = module {
             mainThreadScheduler = get(named(MAIN_SCHEDULER)),
             backgroundScheduler = get(named(BACKGROUND_SCHEDULER)),
             routingActionsDispatcher = get(),
-            queryRestaurants = get()
+            queryRestaurants = get(),
+            filterController = get()
         )
     }
 
@@ -45,5 +49,16 @@ fun homeModule() : Module = module {
         )
     }
 
+    viewModel {
+        FilterViewModel(
+            mainThreadScheduler = get(named(MAIN_SCHEDULER)),
+            backgroundScheduler = get(named(BACKGROUND_SCHEDULER)),
+            routingActionsDispatcher = get(),
+            filterController = get()
+        )
+    }
+
     single<OwnerHomeTranslations> { OwnerHomeTranslationsImpl(androidContext().resources) }
+
+    single<FilterController> { FilterControllerImpl() }
 }

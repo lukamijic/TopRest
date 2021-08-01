@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import com.top.restaurantcardlib.adapter.RestaurantAdapter
 import com.toprest.coreui.BaseFragment
 import com.toprest.coreui.utils.fadeOut
+import com.toprest.coreui.utils.onThrottledClick
 import com.toprest.home.databinding.FragmentCustomerHomeBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -22,6 +23,7 @@ class CustomerHomeFragment : BaseFragment<CustomerHomeViewState, FragmentCustome
 
     override fun FragmentCustomerHomeBinding.initialiseView(savedInstanceState: Bundle?) {
         restaurants.adapter = adapter
+        filterButton.onThrottledClick { model.openFilter() }
     }
 
     override fun render(viewState: CustomerHomeViewState) {
