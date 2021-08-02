@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="edituser_title">Edit User</string>
+    <string name="edituser_tab_customer">Customer</string>
+    <string name="edituser_tab_owner">Owner</string>
+    <string name="edituser_tab_admin">Admin</string>
+
+    <string name="edituser_first_name_hint">First Name</string>
+    <string name="edituser_last_name_hint">Last Name</string>
+
+    <string name="edituser_button">Edit User</string>
+</resources>

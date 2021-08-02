@@ -1,3 +1,5 @@
 package com.toprest.home.ui
 
-class HomeViewState
+import com.toprest.sessionlib.model.domain.UserType
+
+class HomeViewState(val userType: UserType)

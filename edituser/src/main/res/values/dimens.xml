@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="edituser_margin_top">18dp</dimen>
+    <dimen name="edituser_margin_horizontal">24dp</dimen>
+
+    <dimen name="edituser_tab_layout_margin_horizontal">24dp</dimen>
+    <dimen name="edituser_tab_layout_margin_top">12dp</dimen>
+
+    <dimen name="edituser_field_margin_vertical">8dp</dimen>
+    <dimen name="edituser_field_margin_horizontal">24dp</dimen>
+    <dimen name="edituser_button_margin_horizontal">24dp</dimen>
+</resources>

@@ -22,10 +22,13 @@ class SessionSourceImpl(
         .repeatWhen { refreshSignedIn }
         .shareReplayLatest()
 
+    private val users = client.queryUsers().map { it.map(ApiUser::toUser) }.shareReplayLatest()
+
     override fun isSignedIn(): Flowable<Boolean> = isSignedIn
 
-    override fun user(): Flowable<User> = client.getUser()
-        .map(ApiUser::toUser)
+    override fun user(): Flowable<User> = users.map {
+        it.find { user -> firebaseAuth.currentUser?.let { currentUser -> currentUser.uid == user.id } ?: false } ?: User.EMPTY
+    }
         .repeatWhen { isSignedIn }
         .shareReplayLatest()
 
@@ -36,10 +39,15 @@ class SessionSourceImpl(
     override fun logOut(): Completable = client.logout()
         .andThen(refreshSignedIn())
 
+    override fun editUser(userId: String, firstName: String, lastName: String, userType: UserType): Completable =
+        client.editUser(userId, firstName, lastName, userType)
+
     override fun createUser(firstName: String, lastName: String, userType: UserType, email: String, password: String): Completable =
         client.createUser(email, password)
             .flatMapCompletable { (client.storeUserData(it, firstName, lastName, email, userType)) }
             .andThen(refreshSignedIn())
 
-    private fun refreshSignedIn() = Completable.fromAction { refreshSignedIn.onNext(REFRESH_SIGNED_IN) }
+    override fun queryUsers(): Flowable<List<User>> = users
+
+    fun refreshSignedIn() = Completable.fromAction { refreshSignedIn.onNext(REFRESH_SIGNED_IN) }
 }

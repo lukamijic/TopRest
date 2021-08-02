@@ -38,5 +38,7 @@
     <color name="icon_arrow_right_enabled">@color/ebony_clay</color>
     <color name="icon_arrow_right_disabled">@color/ebony_clay_60</color>
 
+    <color name="tab_indicator">@color/sandy_brown</color>
+
     <color name="plate_spinner_background">@color/white_60</color>
 </resources>

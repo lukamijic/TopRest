@@ -16,4 +16,8 @@ interface SessionSource {
     fun createUser(firstName: String, lastName: String, userType: UserType, email: String, password: String) : Completable
 
     fun logOut() : Completable
+
+    fun editUser(userId: String, firstName: String, lastName: String, userType: UserType) : Completable
+
+    fun queryUsers() : Flowable<List<User>>
 }

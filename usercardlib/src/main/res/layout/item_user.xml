@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/elevation_8"
+    android:background="@drawable/bg_rounded"
+    android:layout_marginVertical="@dimen/usercardlib_margin_vertical">
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/EmailTextValueStyle"
+        android:layout_marginVertical="@dimen/usercardlib_email_margin_vertical"
+        android:layout_marginHorizontal="@dimen/usercardlib_email_margin_horizontal"
+        tools:text="luka.mijic@gmail.com"/>
+
+</FrameLayout>

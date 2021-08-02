@@ -30,7 +30,13 @@ fun sessionLibModule(): Module = module {
 
     single { CreateUser(get()) }
 
+    single { EditUser(get()) }
+
     single { QueryUser(get()) }
 
     single { QueryIsSignedIn(get()) }
+
+    single { QueryUsers(get()) }
+
+    single { QueryUserById(get()) }
 }
