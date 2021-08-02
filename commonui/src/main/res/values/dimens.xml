@@ -13,6 +13,7 @@
     <dimen name="radius_8">8dp</dimen>
     <dimen name="radius_12">12dp</dimen>
     <dimen name="radius_16">16dp</dimen>
+    <dimen name="radius_20">20dp</dimen>
 
     <!-- Elevation -->
     <dimen name="elevation_4">4dp</dimen>

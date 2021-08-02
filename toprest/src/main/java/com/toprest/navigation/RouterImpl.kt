@@ -8,6 +8,10 @@ import com.toprest.activity.main.MainActivity
 import com.toprest.activity.start.StartActivity
 import com.toprest.addrestaurant.ui.AddRestaurantFragment
 import com.toprest.dashboard.ui.DashboardFragment
+import com.toprest.editreply.ui.EditReplyFragment
+import com.toprest.editrestaurant.ui.EditRestaurantFragment
+import com.toprest.editreview.ui.EditReviewFragment
+import com.toprest.home.ui.admin.AdminHomeFragment
 import com.toprest.home.ui.customer.CustomerHomeFragment
 import com.toprest.home.ui.filter.FilterFragment
 import com.toprest.home.ui.owner.OwnerHomeFragment
@@ -120,6 +124,16 @@ class RouterImpl(
         markForClosing(AddRestaurantFragment.TAG)
     }
 
+    override fun showEditRestaurant(restaurantId: String) {
+        fragmentManager.inTransactionAndAddToBackStack(EditRestaurantFragment.TAG) {
+            add(MAIN_CONTAINER, EditRestaurantFragment.newInstance(restaurantId), EditRestaurantFragment.TAG)
+        }
+    }
+
+    override fun closeEditRestaurant() {
+        markForClosing(EditRestaurantFragment.TAG)
+    }
+
     override fun showLeaveReview(restaurantId: String) {
         fragmentManager.inTransactionAndAddToBackStack(LeaveReviewFragment.TAG) {
             add(MAIN_CONTAINER, LeaveReviewFragment.newInstance(restaurantId), LeaveReviewFragment.TAG)
@@ -130,6 +144,16 @@ class RouterImpl(
         markForClosing(LeaveReviewFragment.TAG)
     }
 
+    override fun showEditReview(restaurantId: String, reviewId: String) {
+        fragmentManager.inTransactionAndAddToBackStack(EditReviewFragment.TAG) {
+            add(MAIN_CONTAINER, EditReviewFragment.newInstance(restaurantId, reviewId), EditReviewFragment.TAG)
+        }
+    }
+
+    override fun closeEditReview() {
+        markForClosing(EditReviewFragment.TAG)
+    }
+
     override fun showReviewReply(restaurantId: String, reviewId: String) {
         fragmentManager.inTransactionAndAddToBackStack(ReviewReplyFragment.TAG) {
             add(MAIN_CONTAINER, ReviewReplyFragment.newInstance(restaurantId, reviewId), ReviewReplyFragment.TAG)
@@ -138,6 +162,16 @@ class RouterImpl(
 
     override fun closeReviewReply() {
         markForClosing(ReviewReplyFragment.TAG)
+    }
+
+    override fun showEditReply(restaurantId: String, reviewId: String) {
+        fragmentManager.inTransactionAndAddToBackStack(EditReplyFragment.TAG) {
+            add(MAIN_CONTAINER, EditReplyFragment.newInstance(restaurantId, reviewId), EditReplyFragment.TAG)
+        }
+    }
+
+    override fun closeEditReply() {
+        markForClosing(EditReplyFragment.TAG)
     }
 
     override fun showCustomerHome() {
@@ -152,11 +186,21 @@ class RouterImpl(
         }
     }
 
+    override fun showAdminHome() {
+        fragmentManager.inTransaction {
+            replace(HOME_CONTAINER, AdminHomeFragment.newInstance(), AdminHomeFragment.TAG)
+        }
+    }
+
     override fun showRestaurantDetails(restaurantId: String) {
         fragmentManager.inTransactionAndAddToBackStack(RestaurantDetailsFragment.TAG) {
             applyFadeInEnterAndFadeOutExitAnimation()
             add(MAIN_CONTAINER, RestaurantDetailsFragment.newInstance(restaurantId), RestaurantDetailsFragment.TAG)
         }
+    }
+
+    override fun closeRestaurantDetails() {
+        markForClosing(RestaurantDetailsFragment.TAG)
     }
 
     override fun showFilterHome() {

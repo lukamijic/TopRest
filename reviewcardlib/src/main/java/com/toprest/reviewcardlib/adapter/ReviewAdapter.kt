@@ -9,7 +9,9 @@ import com.toprest.reviewcardlib.model.ReviewItem
 
 class ReviewAdapter(
     private val layoutInflater: LayoutInflater,
-    private val replyButtonAction: (String) -> Unit
+    private val replyButtonAction: (String) -> Unit,
+    private val editReviewButtonAction: (String) -> Unit = {},
+    private val editReplyButtonAction: (String) -> Unit = {},
 ) : BaseListAdapter<ReviewItem, ReviewAdapter.ReviewViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ReviewViewHolder(
@@ -18,12 +20,16 @@ class ReviewAdapter(
             parent,
             false
         ),
-        replyButtonAction
+        replyButtonAction,
+        editReviewButtonAction,
+        editReplyButtonAction
     )
 
     class ReviewViewHolder(
         binding: ItemReviewCardBinding,
-        private val replyButtonAction: (String) -> Unit
+        private val replyButtonAction: (String) -> Unit,
+        private val editReviewButtonAction: (String) -> Unit,
+        private val editReplyButtonAction: (String) -> Unit
     ) : BaseViewHolder<ReviewItem, ItemReviewCardBinding>(binding) {
 
         companion object {
@@ -36,6 +42,11 @@ class ReviewAdapter(
             review.text = item.review
             replyButton.show(item.showReplyButton)
             replyButton.onThrottledClick { replyButtonAction(item.id) }
+            editReview.show(item.editable)
+            editReview.onThrottledClick { editReviewButtonAction(item.id) }
+
+            editReply.show(item.editable)
+            editReply.onThrottledClick { editReplyButtonAction(item.id) }
 
             review.onClick { setMaxLines(review) }
             reply.onClick { setMaxLines(reply) }

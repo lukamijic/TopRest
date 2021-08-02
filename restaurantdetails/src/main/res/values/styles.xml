@@ -9,4 +9,8 @@
     </style>
 
     <style name="RestaurantDetailsDescriptionTextStyle" parent="Text.16"/>
+
+    <style name="RestaurantDetailsEditStyle" parent="Text.16">
+        <item name="android:textColor">@color/font_accent</item>
+    </style>
 </resources>

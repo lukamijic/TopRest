@@ -9,4 +9,11 @@ data class Review(
     val dateOfVisit: String,
     val creationTimeStamp: Long,
     val reply: Reply
-)
+) {
+
+    companion object {
+        val EMPTY = Review("", "", "", "", 0, "", -1L, Reply.EMPTY)
+    }
+
+    fun isEmpty() = this === EMPTY
+}

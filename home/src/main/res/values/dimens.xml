@@ -7,10 +7,15 @@
     <dimen name="customerhome_filter_padding">12dp</dimen>
     <dimen name="customerhome_filter_margin_end">12dp</dimen>
     <dimen name="customerhome_filter_margin_top">12dp</dimen>
+
     <dimen name="ownerhome_screen_type_margin_top">12dp</dimen>
     <dimen name="ownerhome_screen_type_margin_end">12dp</dimen>
     <dimen name="ownerhome_add_restaurant_margin_horizontal">24dp</dimen>
     <dimen name="ownerhome_add_restaurant_margin_top">12dp</dimen>
+
+    <dimen name="adminhome_tab_layout_margin_horizontal">24dp</dimen>
+    <dimen name="adminhome_tab_layout_margin_top">12dp</dimen>
+    <dimen name="adminhome_recycle_view_margin_top">12dp</dimen>
 
     <dimen name="filter_home_title_margin_top">36dp</dimen>
     <dimen name="filter_home_title_margin_horizontal">24dp</dimen>

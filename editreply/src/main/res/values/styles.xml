@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="EditReplyTitle" parent="Text.16">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="EditReplyEditTextStyle" parent="Text.16">
+        <item name="android:textColor">@color/font_accent</item>
+    </style>
+</resources>

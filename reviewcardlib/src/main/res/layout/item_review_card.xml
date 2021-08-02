@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="@dimen/review_card_margin_vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clipChildren="false">
@@ -51,6 +52,17 @@
             tools:text="4.5/5" />
 
         <TextView
+            android:id="@+id/edit_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/EditTextStyle"
+            android:paddingEnd="@dimen/reviewcardlib_edit_padding"
+            android:paddingVertical="@dimen/reviewcardlib_edit_padding"
+            android:text="@string/reviewcardlib_edit"
+            app:layout_constraintTop_toBottomOf="@id/date"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
             android:id="@+id/review"
             style="@style/ReviewCardLibReviewTextStyle"
             android:layout_width="0dp"
@@ -60,17 +72,17 @@
             android:maxLines="5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/star"
+            app:layout_constraintTop_toBottomOf="@id/edit_review"
             tools:text="@tools:sample/lorem/random" />
 
         <com.toprest.commonui.view.AccentButton
             android:id="@+id/reply_button"
             android:layout_width="0dp"
             android:layout_height="@dimen/button_height"
-            android:layout_marginTop="@dimen/review_card_reply_button_margin_top"
+            android:layout_marginTop="@dimen/review_card_button_margin_top"
             android:text="@string/reviewcardlib_reply"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/review" />
 
@@ -102,6 +114,17 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/edit_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/EditTextStyle"
+            android:paddingEnd="@dimen/reviewcardlib_edit_padding"
+            android:paddingVertical="@dimen/reviewcardlib_edit_padding"
+            android:text="@string/reviewcardlib_edit"
+            app:layout_constraintTop_toBottomOf="@id/reply_by_owner"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
             android:id="@+id/reply"
             style="@style/ReplyCardReplyTextStyle"
             android:layout_width="0dp"
@@ -111,7 +134,7 @@
             android:maxLines="5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/reply_by_owner"
+            app:layout_constraintTop_toBottomOf="@id/edit_reply"
             tools:text="@tools:sample/lorem/random" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

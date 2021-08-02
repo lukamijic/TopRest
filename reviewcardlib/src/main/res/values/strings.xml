@@ -3,4 +3,6 @@
     <string name="reviewcardlib_reply">Reply</string>
 
     <string name="replycard_review_by_owner">Reply by owner:</string>
+
+    <string name="reviewcardlib_edit">Edit</string>
 </resources>

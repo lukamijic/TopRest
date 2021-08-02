@@ -28,7 +28,7 @@ class HomeViewModel(
                 when (userType) {
                     UserType.CUSTOMER -> dispatchRoutingAction(Router::showCustomerHome)
                     UserType.OWNER -> dispatchRoutingAction(Router::showOwnerHome)
-                    UserType.ADMIN -> dispatchRoutingAction(Router::showCustomerHome)
+                    UserType.ADMIN -> dispatchRoutingAction(Router::showAdminHome)
                 }
             }
     )

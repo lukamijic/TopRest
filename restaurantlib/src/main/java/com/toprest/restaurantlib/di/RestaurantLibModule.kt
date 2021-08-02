@@ -23,9 +23,21 @@ fun restaurantLibModule() : Module = module {
 
     single { CreateRestaurant(get()) }
 
+    single { EditRestaurant(get()) }
+
+    single { DeleteRestaurant(get()) }
+
     single { LeaveReview(get()) }
 
+    single { EditReview(get()) }
+
+    single { DeleteReview(get()) }
+
     single { ReplyToReview(get()) }
+
+    single { EditReply(get()) }
+
+    single { DeleteReply(get()) }
 
     single { QueryRestaurants(get()) }
 
@@ -34,4 +46,8 @@ fun restaurantLibModule() : Module = module {
     single { QueryRestaurantsByOwner(get()) }
 
     single { QueryOwnerPendingReviews(get()) }
+
+    single { QueryReview(get()) }
+
+    single { QueryReply(get()) }
 }
