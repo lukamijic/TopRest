@@ -4,6 +4,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.toprest.core.extension.shareReplayLatest
 import com.toprest.sessionlib.client.SessionClient
 import com.toprest.sessionlib.model.api.ApiUser
+import com.toprest.sessionlib.model.api.toUser
 import com.toprest.sessionlib.model.domain.User
 import com.toprest.sessionlib.model.domain.UserType
 import io.reactivex.rxjava3.core.*
