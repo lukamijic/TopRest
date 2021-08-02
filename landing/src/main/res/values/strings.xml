@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="landing_subtitle">Discover New Restaurants</string>
-    <string name="landing_sign_up_continue_with_google">Continue with Google</string>
     <string name="landing_sign_up_continue_with_email">Continue with Email</string>
 
     <string name="landing_already_have_an_account">Already have an account?</string>

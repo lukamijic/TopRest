@@ -20,6 +20,7 @@
             <option value="$PROJECT_DIR$/editreply" />
             <option value="$PROJECT_DIR$/editrestaurant" />
             <option value="$PROJECT_DIR$/editreview" />
+            <option value="$PROJECT_DIR$/edituser" />
             <option value="$PROJECT_DIR$/firebaselib" />
             <option value="$PROJECT_DIR$/formfieldlib" />
             <option value="$PROJECT_DIR$/home" />
@@ -36,6 +37,7 @@
             <option value="$PROJECT_DIR$/sessionlib" />
             <option value="$PROJECT_DIR$/signup" />
             <option value="$PROJECT_DIR$/toprest" />
+            <option value="$PROJECT_DIR$/usercardlib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

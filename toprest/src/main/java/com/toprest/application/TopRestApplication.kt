@@ -12,6 +12,7 @@ import com.toprest.di.signUpModule
 import com.toprest.editreply.di.editReplyModule
 import com.toprest.editrestaurant.di.editRestaurantModule
 import com.toprest.editreview.di.editReviewModule
+import com.toprest.edituser.di.editUserModule
 import com.toprest.firebaselib.di.firebaseLibModule
 import com.toprest.home.di.homeModule
 import com.toprest.landing.di.landingModule
@@ -46,6 +47,7 @@ class TopRestApplication : Application() {
                     editReplyModule(),
                     editRestaurantModule(),
                     editReviewModule(),
+                    editUserModule(),
                     firebaseLibModule(),
                     homeModule(),
                     landingModule(),

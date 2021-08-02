@@ -11,6 +11,7 @@ import com.toprest.dashboard.ui.DashboardFragment
 import com.toprest.editreply.ui.EditReplyFragment
 import com.toprest.editrestaurant.ui.EditRestaurantFragment
 import com.toprest.editreview.ui.EditReviewFragment
+import com.toprest.edituser.ui.EditUserFragment
 import com.toprest.home.ui.admin.AdminHomeFragment
 import com.toprest.home.ui.customer.CustomerHomeFragment
 import com.toprest.home.ui.filter.FilterFragment
@@ -31,7 +32,6 @@ private const val LAST_FRAGMENT = 0
 private const val START_CONTAINER = R.id.start_container
 private const val SIGN_UP_CONTAINER = R.id.signup_container
 private const val MAIN_CONTAINER = R.id.main_container
-private const val HOME_CONTAINER = R.id.home_container
 
 class RouterImpl(
     private val activity: AppCompatActivity,
@@ -174,22 +174,14 @@ class RouterImpl(
         markForClosing(EditReplyFragment.TAG)
     }
 
-    override fun showCustomerHome() {
-        fragmentManager.inTransaction {
-            replace(HOME_CONTAINER, CustomerHomeFragment.newInstance(), CustomerHomeFragment.TAG)
+    override fun showEditUser(userId: String) {
+        fragmentManager.inTransactionAndAddToBackStack(EditUserFragment.TAG) {
+            add(MAIN_CONTAINER, EditUserFragment.newInstance(userId), EditUserFragment.TAG)
         }
     }
 
-    override fun showOwnerHome() {
-        fragmentManager.inTransaction {
-            replace(HOME_CONTAINER, OwnerHomeFragment.newInstance(), OwnerHomeFragment.TAG)
-        }
-    }
-
-    override fun showAdminHome() {
-        fragmentManager.inTransaction {
-            replace(HOME_CONTAINER, AdminHomeFragment.newInstance(), AdminHomeFragment.TAG)
-        }
+    override fun closeEditUser() {
+        markForClosing(EditUserFragment.TAG)
     }
 
     override fun showRestaurantDetails(restaurantId: String) {

@@ -21,6 +21,7 @@ dependencies {
     implementation project(":editreply")
     implementation project(":editrestaurant")
     implementation project(":editreview")
+    implementation project(":edituser")
     implementation project(":firebaselib")
     implementation project(":home")
     implementation project(":landing")

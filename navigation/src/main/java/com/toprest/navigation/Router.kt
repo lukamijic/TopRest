@@ -52,11 +52,9 @@ interface Router {
 
     fun closeEditReply()
 
-    fun showCustomerHome()
+    fun showEditUser(userId: String)
 
-    fun showOwnerHome()
-
-    fun showAdminHome()
+    fun closeEditUser()
 
     fun showRestaurantDetails(restaurantId: String)
 

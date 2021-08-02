@@ -56,7 +56,8 @@ fun homeModule() : Module = module {
             backgroundScheduler = get(named(BACKGROUND_SCHEDULER)),
             routingActionsDispatcher = get(),
             filterController = get(),
-            queryRestaurants = get()
+            queryRestaurants = get(),
+            queryUsers = get()
         )
     }
 

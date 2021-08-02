@@ -12,6 +12,7 @@ dependencies {
     implementation project(":reviewcardlib")
     implementation project(":restaurantlib")
     implementation project(":sessionlib")
+    implementation project(":usercardlib")
 
     implementation AndroidX.constraintLayout
     implementation UI.materialComponents
