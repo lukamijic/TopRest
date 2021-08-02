@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editreply_title">Edit Reply</string>
+    <string name="editreply_reply_hint">Enter your reply</string>
+    <string name="editreply_button_text">Edit</string>
+</resources>

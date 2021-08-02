@@ -9,7 +9,8 @@ data class ReviewItem(
     val date: String,
     val review: String,
     val showReplyButton: Boolean,
-    val reply: ReplyItem?
+    val reply: ReplyItem?,
+    val editable: Boolean = false
 ) : DiffUtilViewModel(id)
 
 data class ReplyItem(

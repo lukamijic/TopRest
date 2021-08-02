@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.core.os.bundleOf
 import com.toprest.coreui.BaseFragment
+import com.toprest.coreui.utils.fade
 import com.toprest.coreui.utils.onClick
 import com.toprest.coreui.utils.onThrottledClick
 import com.toprest.coreui.utils.show
@@ -28,7 +29,7 @@ class RestaurantDetailsFragment :
     }
 
     private val restaurantId by lazy { requireArguments().getString(RESTAURANT_ID_KEY) }
-    private val adapter by lazy { ReviewAdapter(LayoutInflater.from(requireContext())) { model.reply(it) } }
+    private val adapter by lazy { ReviewAdapter(LayoutInflater.from(requireContext()), model::reply, model::showEditReview, model::showEditReply) }
 
     override val model: RestaurantDetailsViewModel by viewModel(parameters = { parametersOf(restaurantId) })
 
@@ -43,12 +44,15 @@ class RestaurantDetailsFragment :
                 description.maxLines = DEFAULT_MAX_LINES
             }
         }
+
+        edit.onThrottledClick { model.showEditRestaurant() }
     }
 
     override fun render(viewState: RestaurantDetailsViewState) = when(viewState) {
         is RestaurantDetailsViewState.Details -> binding.renderRestaurantDetails(viewState)
         is RestaurantDetailsViewState.ReviewButton -> binding.renderReviewButton(viewState)
         is RestaurantDetailsViewState.Reviews -> renderReviews(viewState)
+        is RestaurantDetailsViewState.Editable -> binding.renderEditable(viewState)
     }
 
     private fun FragmentRestaurantDetailsBinding.renderRestaurantDetails(viewState: RestaurantDetailsViewState.Details) {
@@ -63,5 +67,9 @@ class RestaurantDetailsFragment :
 
     private fun renderReviews(viewState: RestaurantDetailsViewState.Reviews) {
         adapter.submitList(viewState.reviewsItems)
+    }
+
+    private fun FragmentRestaurantDetailsBinding.renderEditable(viewState: RestaurantDetailsViewState.Editable) {
+        edit.fade(viewState.isEditable)
     }
 }

@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/restaurantdetails_background"
     android:clipChildren="false"
-    android:fillViewport="true"
-    android:background="@color/restaurantdetails_background">
+    android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -48,6 +48,21 @@
             tools:text="4.5/5" />
 
         <TextView
+            android:id="@+id/edit"
+            style="@style/RestaurantDetailsEditStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/restaurant_details_edit_margin_start"
+            android:background="?selectableItemBackground"
+            android:padding="@dimen/restaurant_details_edit_padding"
+            android:text="@string/restaurantdetails_edit"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <TextView
             android:id="@+id/description"
             style="@style/RestaurantDetailsDescriptionTextStyle"
             android:layout_width="0dp"
@@ -58,7 +73,7 @@
             android:maxLines="7"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/edit"
             tools:text="@tools:sample/lorem/random" />
 
         <com.toprest.commonui.view.AccentButton
@@ -69,9 +84,9 @@
             android:layout_marginTop="@dimen/restaurantdetails_review_button_margin_top"
             android:text="@string/restaurantdetails_review"
             android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/reviews"
@@ -79,13 +94,13 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/restaurantdetails_recycler_view_margin_horizontal"
             android:layout_marginTop="@dimen/restaurantdetails_recycler_view_margin_top"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:clipChildren="false"
             android:orientation="vertical"
             android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/review_button"
-            android:clipChildren="false"
             tools:itemCount="5"
             tools:listitem="@layout/item_review_card" />
     </androidx.constraintlayout.widget.ConstraintLayout>

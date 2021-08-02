@@ -17,6 +17,9 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/coreui" />
             <option value="$PROJECT_DIR$/dashboard" />
+            <option value="$PROJECT_DIR$/editreply" />
+            <option value="$PROJECT_DIR$/editrestaurant" />
+            <option value="$PROJECT_DIR$/editreview" />
             <option value="$PROJECT_DIR$/firebaselib" />
             <option value="$PROJECT_DIR$/formfieldlib" />
             <option value="$PROJECT_DIR$/home" />

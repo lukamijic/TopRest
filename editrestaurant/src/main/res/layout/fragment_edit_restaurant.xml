@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/empty_space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:alpha="0"
+        android:background="@color/actionsheet_overlay"
+        app:layout_constraintBottom_toTopOf="@id/action_sheet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.toprest.actionsheetlib.ActionSheet
+        android:id="@+id/action_sheet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:actionSheetAutoExpand="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/EditRestaurantTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/editrestaurant_title_margin_horizontal"
+                android:layout_marginTop="@dimen/editrestaurant_title_margin_top"
+                android:text="@string/editrestaurant_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/ic_trash"
+                android:layout_marginEnd="@dimen/editrestaurant_delete_margin_end"
+                style="@style/IconButton"/>
+
+            <com.coinme.formfieldlib.FormFieldView
+                android:id="@+id/restaurant_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/editrestaurant_name_margin_horizontal"
+                android:layout_marginTop="@dimen/editrestaurant_name_margin_top"
+                android:elevation="@dimen/elevation_8"
+                android:hint="@string/editrestaurant_name_hint"
+                android:nextFocusDown="@id/restaurant_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <com.coinme.formfieldlib.FormFieldView
+                android:id="@+id/restaurant_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/editrestaurant_description_margin_horizontal"
+                android:layout_marginTop="@dimen/editrestaurant_description_margin_top"
+                android:layout_marginBottom="@dimen/editrestaurant_description_margin_bottom"
+                android:elevation="@dimen/elevation_8"
+                android:hint="@string/editrestaurant_description_hint"
+                android:minLines="5"
+                android:maxLines="5"
+                app:layout_constraintBottom_toTopOf="@id/complete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/restaurant_name" />
+
+            <com.toprest.commonui.view.AccentButton
+                android:id="@+id/complete"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginHorizontal="@dimen/editrestaurant_button_margin_horizontal"
+                android:text="@string/editrestaurant_edit_restaurant"
+                android:enabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.toprest.actionsheetlib.ActionSheet>
+
+    <com.toprest.commonui.view.PlateSpinner
+        android:id="@+id/plate_spinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="@dimen/elevation_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.toprest.home.di
 import com.toprest.core.di.BACKGROUND_SCHEDULER
 import com.toprest.core.di.MAIN_SCHEDULER
 import com.toprest.home.ui.HomeViewModel
+import com.toprest.home.ui.admin.AdminHomeViewModel
 import com.toprest.home.ui.customer.CustomerHomeViewModel
 import com.toprest.home.ui.filter.FilterViewModel
 import com.toprest.home.ui.filter.controller.FilterController
@@ -46,6 +47,16 @@ fun homeModule() : Module = module {
             queryRestaurantsByOwner = get(),
             queryOwnerPendingReviews = get(),
             translations = get()
+        )
+    }
+
+    viewModel {
+        AdminHomeViewModel(
+            mainThreadScheduler = get(named(MAIN_SCHEDULER)),
+            backgroundScheduler = get(named(BACKGROUND_SCHEDULER)),
+            routingActionsDispatcher = get(),
+            filterController = get(),
+            queryRestaurants = get()
         )
     }
 

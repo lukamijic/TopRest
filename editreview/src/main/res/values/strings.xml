@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editreview_title">Edit Review</string>
+    <string name="editreview_edit">Edit</string>
+    <string name="editreview_date_of_visit">Date of Visit:</string>
+    <string name="editreview_date_of_visit_hint">DD/MM/YYYY</string>
+    <string name="editreview_review_hint">Review</string>
+</resources>

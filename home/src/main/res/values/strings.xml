@@ -6,6 +6,10 @@
     <string name="ownerhome_restaurant_title">My Restaurants</string>
     <string name="ownerhome_reviews_title">Pending Reviews</string>
 
+    <string name="adminhome_title">Admin\'s Corner</string>
+    <string name="adminhome_tab_restaurants">Restaurants</string>
+    <string name="adminhome_tab_reviews">Reviews</string>
+
     <string name="filterhome_title">Filter</string>
     <string name="filterhome_minimum_score">Minimum Score:</string>
     <string name="filterhome_clear">Clear Filter</string>

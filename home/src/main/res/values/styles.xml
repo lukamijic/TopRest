@@ -8,6 +8,10 @@
         <item name="android:textColor">@color/font_accent</item>
     </style>
 
+    <style name="AdminHomeTabTextStyle" parent="Text.16">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
     <style name="FilterHomeMinimumScoreTextStyle" parent="Text.16"/>
     <style name="FilterHomeClearFilterTextStyle" parent="Text.16">
         <item name="android:textColor">@color/font_accent</item>

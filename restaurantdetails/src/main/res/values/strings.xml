@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="restaurantdetails_review">Review</string>
+    <string name="restaurantdetails_edit">Edit</string>
 </resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editrestaurant_title">Edit Restaurant</string>
+    <string name="editrestaurant_name_hint">Enter Restaurant Name</string>
+    <string name="editrestaurant_description_hint">Enter Restaurant Description</string>
+    <string name="editrestaurant_edit_restaurant">Edit Restaurant</string>
+</resources>
